@@ -9,40 +9,35 @@
           <span class="logo-icon">🍪</span>
           <span class="logo-text">Click<span class="logo-accent">Cookies</span></span>
         </a>
-        <p class="footer-tagline">The sweetest clicking game on the internet. Bake, click, and collect every cookie in the jar!</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Twitter" class="social-icon">𝕏</a>
-          <a href="#" aria-label="Discord" class="social-icon">💬</a>
-          <a href="#" aria-label="YouTube" class="social-icon">▶</a>
-          <a href="#" aria-label="Reddit" class="social-icon">🔴</a>
-        </div>
+        <p class="footer-tagline">The sweetest clicking game on the internet. Bake, click, and collect every cookie in the jar!</p>        
       </div>
       <div class="footer-links">
         <div class="footer-col">
           <h4>Game</h4>
           <ul>
-            <li><a href="#game">Play Now</a></li>
-            <li><a href="#how-to-play">How to Play</a></li>
-            <li><a href="#upgrades">Upgrades</a></li>
-            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="/#game">Play Now</a></li>
+            <li><a href="/#how-to-play">How to Play</a></li>
+            <li><a href="/#upgrades">Upgrades</a></li>
+            <li><a href="/#achievements">Achievements</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Info</h4>
           <ul>
-            <li><a href="#cookie-types">Cookie Types</a></li>
-            <li><a href="#leaderboard">Leaderboard</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#features">Features</a></li>
+            <li><a href="/#cookie-types">Cookie Types</a></li>
+            <li><a href="/#leaderboard">Leaderboard</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/#features">Features</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Legal</h4>
           <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">Cookie Policy</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Use</a></li>
+            <li><a href="/cookies">Cookie Policy</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/about">About</a></li>
           </ul>
         </div>
       </div>
