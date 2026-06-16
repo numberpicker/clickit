@@ -3,27 +3,27 @@ const CookieGame = (function () {
 
   // ─── Cookie Types (20+) ───────────────────────────────────────────────────
   const COOKIE_TYPES = [
-    { id: 'classic',      name: 'Classic Cookie',        emoji: '🍪', points: 1,    rarity: 'common',    color: '#D2691E', speed: 2.5, size: 52, requiredLevel: 1  },
-    { id: 'choco',        name: 'Chocolate Chip',        emoji: '🍫', points: 2,    rarity: 'common',    color: '#5C3317', speed: 2.8, size: 50, requiredLevel: 1  },
-    { id: 'sugar',        name: 'Sugar Cookie',          emoji: '⭐', points: 3,    rarity: 'common',    color: '#FFD700', speed: 3.0, size: 48, requiredLevel: 1  },
-    { id: 'peanut',       name: 'Peanut Butter',         emoji: '🥜', points: 4,    rarity: 'common',    color: '#C8A96E', speed: 3.2, size: 50, requiredLevel: 2  },
-    { id: 'oatmeal',      name: 'Oatmeal Raisin',        emoji: '🌾', points: 5,    rarity: 'common',    color: '#A0785A', speed: 3.0, size: 52, requiredLevel: 2  },
-    { id: 'snickerdoodle',name: 'Snickerdoodle',         emoji: '🌀', points: 6,    rarity: 'uncommon',  color: '#F4A460', speed: 3.5, size: 50, requiredLevel: 3  },
-    { id: 'macaroon',     name: 'Coconut Macaroon',      emoji: '🥥', points: 8,    rarity: 'uncommon',  color: '#FFF8DC', speed: 3.3, size: 48, requiredLevel: 3  },
-    { id: 'ginger',       name: 'Gingerbread',           emoji: '🎄', points: 10,   rarity: 'uncommon',  color: '#8B4513', speed: 3.8, size: 54, requiredLevel: 4  },
-    { id: 'macaron',      name: 'French Macaron',        emoji: '🎀', points: 12,   rarity: 'uncommon',  color: '#FFB6C1', speed: 4.0, size: 50, requiredLevel: 4  },
-    { id: 'lemon',        name: 'Lemon Drizzle',         emoji: '🍋', points: 15,   rarity: 'uncommon',  color: '#FFF44F', speed: 4.2, size: 48, requiredLevel: 5  },
-    { id: 'rainbow',      name: 'Rainbow Cookie',        emoji: '🌈', points: 20,   rarity: 'rare',      color: '#FF6B9D', speed: 4.5, size: 52, requiredLevel: 5  },
-    { id: 'sprinkle',     name: 'Sprinkle Explosion',    emoji: '🎉', points: 25,   rarity: 'rare',      color: '#FF69B4', speed: 4.8, size: 50, requiredLevel: 6  },
-    { id: 'choco_lava',   name: 'Chocolate Lava',        emoji: '🌋', points: 30,   rarity: 'rare',      color: '#3D0C02', speed: 5.0, size: 56, requiredLevel: 6  },
-    { id: 'galaxy',       name: 'Galaxy Cookie',         emoji: '🌌', points: 40,   rarity: 'epic',      color: '#1a0533', speed: 5.5, size: 58, requiredLevel: 7  },
-    { id: 'unicorn',      name: 'Unicorn Cookie',        emoji: '🦄', points: 50,   rarity: 'epic',      color: '#E0B0FF', speed: 5.8, size: 54, requiredLevel: 7  },
-    { id: 'dragon',       name: 'Dragon Cookie',         emoji: '🐉', points: 75,   rarity: 'epic',      color: '#FF4500', speed: 6.2, size: 60, requiredLevel: 8  },
-    { id: 'diamond',      name: 'Diamond Cookie',        emoji: '💎', points: 100,  rarity: 'legendary', color: '#B9F2FF', speed: 6.8, size: 62, requiredLevel: 9  },
-    { id: 'golden',       name: 'Golden Cookie',         emoji: '🏆', points: 150,  rarity: 'legendary', color: '#FFD700', speed: 7.2, size: 64, requiredLevel: 9  },
-    { id: 'cosmic',       name: 'Cosmic Cookie',         emoji: '✨', points: 200,  rarity: 'legendary', color: '#9B59B6', speed: 7.5, size: 66, requiredLevel: 10 },
-    { id: 'void',         name: 'Void Cookie',           emoji: '🌑', points: 500,  rarity: 'mythic',    color: '#0a0a0a', speed: 8.5, size: 70, requiredLevel: 10 },
-    { id: 'infinity',     name: 'Infinity Cookie',       emoji: '♾️', points: 1000, rarity: 'mythic',    color: '#FF00FF', speed: 9.0, size: 72, requiredLevel: 10 },
+    { id: 'classic',      name: 'Classic Cookie',        image: 'images/classic-cookie.png', points: 1,    rarity: 'common',    color: '#D2691E', speed: 2.5, size: 52, requiredLevel: 1  },
+    { id: 'choco',        name: 'Chocolate Chip',        image: 'images/chocolate-chip.png, points: 2,    rarity: 'common',    color: '#5C3317', speed: 2.8, size: 50, requiredLevel: 1  },
+    { id: 'sugar',        name: 'Sugar Cookie',          image: 'images/sugar-cookie.png, points: 3,    rarity: 'common',    color: '#FFD700', speed: 3.0, size: 48, requiredLevel: 1  },
+    { id: 'peanut',       name: 'Peanut Butter',         image: 'images/peanut-butter.png, points: 4,    rarity: 'common',    color: '#C8A96E', speed: 3.2, size: 50, requiredLevel: 2  },
+    { id: 'oatmeal',      name: 'Oatmeal Raisin',        image: 'images/oatmeal-raisin.png, points: 5,    rarity: 'common',    color: '#A0785A', speed: 3.0, size: 52, requiredLevel: 2  },
+    { id: 'snickerdoodle',name: 'Snickerdoodle',         image: 'images/snickerdoodle.png, points: 6,    rarity: 'uncommon',  color: '#F4A460', speed: 3.5, size: 50, requiredLevel: 3  },
+    { id: 'macaroon',     name: 'Coconut Macaroon',      image: 'images/coconut-macaroon.png, points: 8,    rarity: 'uncommon',  color: '#FFF8DC', speed: 3.3, size: 48, requiredLevel: 3  },
+    { id: 'ginger',       name: 'Gingerbread',           image: 'images/gingerbread.png, points: 10,   rarity: 'uncommon',  color: '#8B4513', speed: 3.8, size: 54, requiredLevel: 4  },
+    { id: 'macaron',      name: 'French Macaron',        image: 'images/french-macaron.png, points: 12,   rarity: 'uncommon',  color: '#FFB6C1', speed: 4.0, size: 50, requiredLevel: 4  },
+    { id: 'lemon',        name: 'Lemon Drizzle',         image: 'images/lemon-drizzle.png, points: 15,   rarity: 'uncommon',  color: '#FFF44F', speed: 4.2, size: 48, requiredLevel: 5  },
+    { id: 'rainbow',      name: 'Rainbow Cookie',        image: 'images/rainbow-cookie.png, points: 20,   rarity: 'rare',      color: '#FF6B9D', speed: 4.5, size: 52, requiredLevel: 5  },
+    { id: 'sprinkle',     name: 'Sprinkle Explosion',    image: 'images/sprinkle-explosion.png, points: 25,   rarity: 'rare',      color: '#FF69B4', speed: 4.8, size: 50, requiredLevel: 6  },
+    { id: 'choco_lava',   name: 'Chocolate Lava',        image: 'images/chocolate-lava.png, points: 30,   rarity: 'rare',      color: '#3D0C02', speed: 5.0, size: 56, requiredLevel: 6  },
+    { id: 'galaxy',       name: 'Galaxy Cookie',         image: 'images/galaxy-cookie.png, points: 40,   rarity: 'epic',      color: '#1a0533', speed: 5.5, size: 58, requiredLevel: 7  },
+    { id: 'unicorn',      name: 'Unicorn Cookie',        image: 'images/unicorn-cookie.png, points: 50,   rarity: 'epic',      color: '#E0B0FF', speed: 5.8, size: 54, requiredLevel: 7  },
+    { id: 'dragon',       name: 'Dragon Cookie',         image: 'images/dragon-cookie.png, points: 75,   rarity: 'epic',      color: '#FF4500', speed: 6.2, size: 60, requiredLevel: 8  },
+    { id: 'diamond',      name: 'Diamond Cookie',        image: 'images/diamond-cookie.png, points: 100,  rarity: 'legendary', color: '#B9F2FF', speed: 6.8, size: 62, requiredLevel: 9  },
+    { id: 'golden',       name: 'Golden Cookie',         image: 'images/golden-cookie.png, points: 150,  rarity: 'legendary', color: '#FFD700', speed: 7.2, size: 64, requiredLevel: 9  },
+    { id: 'cosmic',       name: 'Cosmic Cookie',         image: 'images/cosmic-cookie.png, points: 200,  rarity: 'legendary', color: '#9B59B6', speed: 7.5, size: 66, requiredLevel: 10 },
+    { id: 'void',         name: 'Void Cookie',           image: 'images/void-cookie.png, points: 500,  rarity: 'mythic',    color: '#0a0a0a', speed: 8.5, size: 70, requiredLevel: 10 },
+    { id: 'infinity',     name: 'Infinity Cookie',       image: 'images/infinity-cookie.png, points: 1000, rarity: 'mythic',    color: '#FF00FF', speed: 9.0, size: 72, requiredLevel: 10 },
   ];
 
   // ─── Levels ───────────────────────────────────────────────────────────────
@@ -216,7 +216,7 @@ const CookieGame = (function () {
     // Create DOM element
     const el = document.createElement('div');
     el.className = `falling-cookie rarity-${chosen.rarity}`;
-    el.innerHTML = `<span class="cookie-emoji">${chosen.emoji}</span>`;
+    el.innerHTML = `<img src="${chosen.image}" alt="${chosen.name}" style="width:100%;height:100%;object-fit:contain;pointer-events:none;border-radius:50%;">`;
     el.style.cssText = `
       position:absolute; left:${cookie.x}px; top:${cookie.y}px;
       width:${cookie.size}px; height:${cookie.size}px;
