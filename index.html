@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Click Cookies – Free Cookie Clicking Game | Play Online</title>
+  <meta name="description" content="Play Click Cookies free online! Catch falling cookies, earn points, unlock 20+ cookie types, buy upgrades, and conquer 10 levels. The sweetest browser game ever!" />
+  <meta name="keywords" content="click cookies, cookie clicking game, cookie clicker, falling cookies game, browser game, free online game, cookie game, click game, casual game" />
+  <meta name="author" content="ClickCookies.com" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://clickcookies.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Click Cookies – Free Cookie Clicking Game" />
+  <meta property="og:description" content="Catch falling cookies, collect 20+ cookie types, unlock upgrades and earn achievements. Play free now!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://clickcookies.com/" />
+  <meta property="og:image" content="https://clickcookies.com/assets/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Click Cookies – Play Free Online" />
+  <meta name="twitter:description" content="Catch falling cookies, earn points, and become the ultimate Cookie God!" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍪</text></svg>" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DH0NXE4ME3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DH0NXE4ME3');
+  </script>
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9759808041159779" crossorigin="anonymous"></script>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Click Cookies",
+      "url": "https://clickcookies.com/",
+      "description": "Click Cookies is a free browser-based cookie clicking game where players catch falling cookies to earn points, unlock upgrades, and achieve legendary cookie status across 10 exciting levels.",
+      "genre": ["Casual", "Clicker", "Arcade"],
+      "playMode": "SinglePlayer",
+      "applicationCategory": "Game",
+      "operatingSystem": "Web Browser",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "publisher": { "@type": "Organization", "name": "ClickCookies.com", "url": "https://clickcookies.com" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "keywords": "cookie game, click cookies, falling cookies, clicker game"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Click Cookies",
+      "url": "https://clickcookies.com/",
+      "applicationCategory": "GameApplication",
+      "browserRequirements": "Requires JavaScript",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you play Click Cookies?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Cookies fall from the top of the screen. Click or tap them before they reach the bottom to earn points. Rarer cookies give more points. Build combos by clicking quickly and use upgrades to improve your score." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Click Cookies free to play?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes! Click Cookies is completely free to play directly in your browser with no downloads or sign-up required." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many cookie types are there?",
+          "acceptedAnswer": { "@type": "Answer", "text": "There are 21 unique cookie types ranging from Common (Classic Cookie) to Mythic (Infinity Cookie), each with different point values, speeds, and rarities." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do combos work in Click Cookies?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Clicking multiple cookies rapidly without missing builds your combo multiplier. Higher combos award bonus points on every click. Your combo resets after 2.5 seconds without a click." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Click Cookies save my progress?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, Click Cookies automatically saves your progress to your browser's local storage every 15 seconds so you can pick up right where you left off." }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://clickcookies.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Play Game", "item": "https://clickcookies.com/#game" },
+        { "@type": "ListItem", "position": 3, "name": "Cookie Types", "item": "https://clickcookies.com/#cookie-types" }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+<!-- ── Header (injected by header.js) ── -->
+<div id="header-placeholder"></div>
+
+<!-- ── Level Up Banner ── -->
+<div class="levelup-banner" id="levelup-banner"></div>
+
+<!-- ================================================================
+     SECTION 1: HERO
+     ================================================================ -->
+<section class="hero" id="home">
+  <div class="hero-bg-shapes" aria-hidden="true">
+    <span>🍪</span><span>🍫</span><span>⭐</span><span>🎉</span><span>🏆</span><span>🌈</span>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">🍪 #1 Free Cookie Game</div>
+      <h1>
+        Click <span class="accent">Cookies</span>,<br>
+        Rule the <span class="accent-2">Bakery!</span>
+      </h1>
+      <p class="hero-desc">
+        Cookies are falling from the sky — catch them, click them, and rack up an insane score! Unlock 21 cookie types, crush 10 levels, and become the legendary Cookie God.
+      </p>
+      <div class="hero-cta-row">
+        <button class="btn-primary" onclick="document.getElementById('game').scrollIntoView({behavior:'smooth'})">
+          🎮 Play Now — It's Free!
+        </button>
+        <button class="btn-secondary" onclick="document.getElementById('how-to-play').scrollIntoView({behavior:'smooth'})">
+          📖 How to Play
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="stat-num">21+</div>
+          <div class="stat-label">Cookie Types</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num">10</div>
+          <div class="stat-label">Levels</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num">21</div>
+          <div class="stat-label">Achievements</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Free to Play</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="orbit-cookie">🌟</div>
+      <div class="orbit-cookie">🍫</div>
+      <div class="orbit-cookie">⭐</div>
+      <div class="big-cookie" id="hero-cookie" title="Click me!" onclick="heroCookieClick(this)">🍪</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     SECTION 2: THE GAME
+     ================================================================ -->
+<section id="game">
+  <div class="game-container">
+    <div class="game-header reveal">
+      <div class="section-tag">🎮 Play Now</div>
+      <h2 class="section-title">Catch the Falling Cookies!</h2>
+      <p class="section-sub">Click or tap every cookie before it hits the ground. Rare cookies = bigger points. Build combos for massive bonuses!</p>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="game-stats-bar reveal">
+      <div class="stat-box highlight">
+        <div class="stat-label">Score</div>
+        <div class="stat-val" id="current-score">0</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Total Earned</div>
+        <div class="stat-val" id="total-score">0</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Cookies Caught</div>
+        <div class="stat-val" id="caught-count">0</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Total Clicks</div>
+        <div class="stat-val" id="total-clicks">0</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Missed</div>
+        <div class="stat-val" id="missed-count">0</div>
+      </div>
+    </div>
+
+    <!-- Level bar -->
+    <div class="level-bar-wrap reveal">
+      <div class="level-bar-top">
+        <span class="level-name" id="level-name">Cookie Rookie</span>
+        <span class="level-badge">Level <span id="level-num">1</span></span>
+      </div>
+      <div class="level-track">
+        <div class="level-fill" id="level-progress"></div>
+      </div>
+      <div class="level-next">Next level at <strong id="next-level-score">200</strong> total points</div>
+    </div>
+
+    <!-- Main game layout -->
+    <div class="game-layout reveal">
+
+      <!-- Arena -->
+      <div class="game-arena-wrap">
+        <div class="arena-top-bar">
+          <span class="arena-title">🍪 Cookie Rain Arena</span>
+          <div class="arena-controls">
+            <button class="btn-game btn-start" id="start-btn" onclick="CookieGame.startGame()">▶ Start Game</button>
+            <button class="btn-game btn-pause" id="pause-btn" onclick="CookieGame.pauseGame()">⏸ Pause</button>
+            <button class="btn-game btn-reset" onclick="CookieGame.resetGame()">↺ Reset</button>
+          </div>
+        </div>
+        <div id="game-area">
+          <!-- Game start overlay -->
+          <div class="game-start-overlay" id="game-start-overlay">
+            <div class="big-emoji">🍪</div>
+            <h3>Ready to Bake?</h3>
+            <p>Click <strong>Start Game</strong> to begin catching cookies!</p>
+          </div>
+          <!-- Combo display -->
+          <div class="combo-display" id="combo-display">🔥 1x COMBO</div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="game-sidebar">
+        <!-- Tabs -->
+        <div class="game-tabs">
+          <button class="game-tab active" data-tab="upgrades-panel-wrap">⬆ Upgrades</button>
+          <button class="game-tab" data-tab="achievements-panel-wrap">🏆 Earned</button>
+          <button class="game-tab" data-tab="catalogue-panel-wrap">📋 Cookies</button>
+          <button class="game-tab" data-tab="leaderboard-panel-wrap">🏅 Board</button>
+        </div>
+
+        <!-- Upgrades -->
+        <div class="tab-panel active" id="upgrades-panel-wrap">
+          <div id="upgrades-panel" style="display:flex;flex-direction:column;gap:8px;max-height:400px;overflow-y:auto;"></div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="tab-panel" id="achievements-panel-wrap">
+          <div id="achievements-panel" style="display:flex;flex-direction:column;gap:8px;max-height:400px;overflow-y:auto;"></div>
+        </div>
+
+        <!-- Cookie catalogue -->
+        <div class="tab-panel" id="catalogue-panel-wrap">
+          <div id="cookie-catalogue" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-height:400px;overflow-y:auto;"></div>
+        </div>
+
+        <!-- Leaderboard -->
+        <div class="tab-panel" id="leaderboard-panel-wrap">
+          <div id="leaderboard-panel" style="background:var(--white);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow);">
+            <table style="width:100%;border-collapse:collapse;">
+              <thead>
+                <tr><th style="background:linear-gradient(90deg,var(--candy-pink),var(--candy-purple));color:#fff;padding:8px 10px;font-size:.78rem;text-align:left;">#</th><th style="background:linear-gradient(90deg,var(--candy-pink),var(--candy-purple));color:#fff;padding:8px 10px;font-size:.78rem;text-align:left;">Player</th><th style="background:linear-gradient(90deg,var(--candy-pink),var(--candy-purple));color:#fff;padding:8px 10px;font-size:.78rem;text-align:left;">Score</th><th style="background:linear-gradient(90deg,var(--candy-pink),var(--candy-purple));color:#fff;padding:8px 10px;font-size:.78rem;text-align:left;">Lv</th></tr>
+              </thead>
+              <tbody id="leaderboard-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end .game-layout -->
+  </div>
+</section>
+
+<!-- ================================================================
+     SECTION 3: HOW TO PLAY
+     ================================================================ -->
+<section id="how-to-play">
+  <div class="section-inner">
+    <div class="text-center reveal">
+      <div class="section-tag">📖 Tutorial</div>
+      <h2 class="section-title">How to Play Click Cookies</h2>
+      <p class="section-sub">Mastering Click Cookies is easy to learn and impossible to put down. Follow these steps to become a Cookie God!</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <span class="step-num">1</span>
+        <span class="step-icon">▶️</span>
+        <h3>Start the Game</h3>
+        <p>Hit the <strong>Start Game</strong> button in the Cookie Rain Arena above. Cookies will immediately begin falling from the top of the screen in all their sugary glory.</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-num">2</span>
+        <span class="step-icon">👆</span>
+        <h3>Click the Cookies</h3>
+        <p>Click or tap each falling cookie before it reaches the bottom. Every cookie you catch earns points — and rarer cookies are worth a whole lot more!</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-num">3</span>
+        <span class="step-icon">🔥</span>
+        <h3>Build Your Combo</h3>
+        <p>Click cookies rapidly to stack your combo multiplier. A 10x combo adds massive bonus points per click. Don't let cookies fall — that resets your streak!</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-num">4</span>
+        <span class="step-icon">⬆️</span>
+        <h3>Buy Upgrades</h3>
+        <p>Spend your earned points on upgrades like Cookie Magnets, Auto Bakers, Double Dough boosts, and more. Each upgrade makes the game even sweeter.</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-num">5</span>
+        <span class="step-icon">🏆</span>
+        <h3>Earn Achievements</h3>
+        <p>Unlock 21 achievements for milestones like clicking 1,000 cookies, catching your first Golden Cookie, or reaching a 50x combo. Each badge is a badge of honour!</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-num">6</span>
+        <span class="step-icon">👑</span>
+        <h3>Reach Cookie God</h3>
+        <p>Advance through 10 levels from Cookie Rookie all the way to Cookie God. Higher levels unlock rarer cookies, faster spawns, and more falling cookies at once.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     SECTION 4: COOKIE TYPES
+     ================================================================ -->
+<section id="cookie-types">
+  <div class="section-inner">
+    <div class="text-center reveal">
+      <div class="section-tag">🍪 Cookie Gallery</div>
+      <h2 class="section-title">21 Unique Cookie Types</h2>
+      <p class="section-sub">From humble Classic Cookies to the all-powerful Infinity Cookie, discover every delicious variety that rains down from the sky.</p>
+    </div>
+    <div class="cookies-showcase reveal">
+      <!-- Classic -->
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">🍪</span>
+        <h4>Classic Cookie</h4>
+        <span class="rarity-pill common">Common</span>
+        <div class="pts-badge">+1 pt</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">🍫</span>
+        <h4>Chocolate Chip</h4>
+        <span class="rarity-pill common">Common</span>
+        <div class="pts-badge">+2 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">⭐</span>
+        <h4>Sugar Cookie</h4>
+        <span class="rarity-pill common">Common</span>
+        <div class="pts-badge">+3 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">🥜</span>
+        <h4>Peanut Butter</h4>
+        <span class="rarity-pill common">Common</span>
+        <div class="pts-badge">+4 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">🌾</span>
+        <h4>Oatmeal Raisin</h4>
+        <span class="rarity-pill common">Common</span>
+        <div class="pts-badge">+5 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">🌀</span>
+        <h4>Snickerdoodle</h4>
+        <span class="rarity-pill uncommon">Uncommon</span>
+        <div class="pts-badge">+6 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">🥥</span>
+        <h4>Coconut Macaroon</h4>
+        <span class="rarity-pill uncommon">Uncommon</span>
+        <div class="pts-badge">+8 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">🎄</span>
+        <h4>Gingerbread</h4>
+        <span class="rarity-pill uncommon">Uncommon</span>
+        <div class="pts-badge">+10 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">🎀</span>
+        <h4>French Macaron</h4>
+        <span class="rarity-pill uncommon">Uncommon</span>
+        <div class="pts-badge">+12 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">🍋</span>
+        <h4>Lemon Drizzle</h4>
+        <span class="rarity-pill uncommon">Uncommon</span>
+        <div class="pts-badge">+15 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">🌈</span>
+        <h4>Rainbow Cookie</h4>
+        <span class="rarity-pill rare">Rare</span>
+        <div class="pts-badge">+20 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">🎉</span>
+        <h4>Sprinkle Explosion</h4>
+        <span class="rarity-pill rare">Rare</span>
+        <div class="pts-badge">+25 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">🌋</span>
+        <h4>Chocolate Lava</h4>
+        <span class="rarity-pill rare">Rare</span>
+        <div class="pts-badge">+30 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">🌌</span>
+        <h4>Galaxy Cookie</h4>
+        <span class="rarity-pill epic">Epic</span>
+        <div class="pts-badge">+40 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">🦄</span>
+        <h4>Unicorn Cookie</h4>
+        <span class="rarity-pill epic">Epic</span>
+        <div class="pts-badge">+50 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">🐉</span>
+        <h4>Dragon Cookie</h4>
+        <span class="rarity-pill epic">Epic</span>
+        <div class="pts-badge">+75 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">💎</span>
+        <h4>Diamond Cookie</h4>
+        <span class="rarity-pill legendary">Legendary</span>
+        <div class="pts-badge">+100 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">🏆</span>
+        <h4>Golden Cookie</h4>
+        <span class="rarity-pill legendary">Legendary</span>
+        <div class="pts-badge">+150 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">✨</span>
+        <h4>Cosmic Cookie</h4>
+        <span class="rarity-pill legendary">Legendary</span>
+        <div class="pts-badge">+200 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">🌑</span>
+        <h4>Void Cookie</h4>
+        <span class="rarity-pill mythic">Mythic</span>
+        <div class="pts-badge">+500 pts</div>
+      </div>
+      <div class="cookie-showcase-card">
+        <span class="cookie-big">♾️</span>
+        <h4>Infinity Cookie</h4>
+        <span class="rarity-pill mythic">Mythic</span>
+        <div class="pts-badge">+1000 pts</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     SECTION 5: FEATURES
+     ================================================================ -->
+<section id="features">
+  <div class="section-inner">
+    <div class="text-center reveal">
+      <div class="section-tag">⚡ Features</div>
+      <h2 class="section-title">Why Click Cookies is Irresistible</h2>
+      <p class="section-sub">Packed with mechanics that keep every session fresh, competitive, and outrageously fun for players of all ages.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap" style="background:linear-gradient(135deg,#FFE0EC,#FFCCE0)">🍪</div>
+        <div>
+          <h3>21 Cookie Varieties</h3>
+          <p>From everyday classic cookies to mythical Void and Infinity cookies, each rarity tier drops at different rates and rewards you with bigger point bonanzas.</p>
+        </div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap" style="background:linear-gradient(135deg,#E0F0FF,#CCE4FF)">🔥</div>
+        <div>
+          <h3>Combo Multiplier System</h3>
+          <p>Click consecutively to stack your combo counter. A 50x combo awards breathtaking bonus points and triggers a special audio effect to reward your reflexes.</p>
+        </div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap" style="background:linear-gradient(135deg,#E8FFE0,#D4FFCC)">⬆️</div>
+        <div>
+          <h3>10 Powerful Upgrades</h3>
+          <p>Invest your cookies wisely — upgrades like Cookie Magnet, Auto Baker, Time Freeze, and Triple Threat transform how you play entirely.</p>
+        </div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap" style="background:linear-gradient(135deg,#FFF5E0,#FFEBCC)">🏆</div>
+        <div>
+          <h3>21 Achievements to Earn</h3>
+          <p>Challenge yourself to earn every achievement — from clicking your first cookie to reaching a 50x combo or discovering every cookie type in the catalogue.</p>
+        </div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap" style="background:linear-gradient(135deg,#F5E0FF,#EBD0FF)">👑</div>
+        <div>
+          <h3>10 Progression Levels</h3>
+          <p>Rise from Cookie Rookie through Cookie Baker, Master, Wizard, Sorcerer, and beyond until you claim the throne as Cookie God at Level 10.</p>
+        </div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap" style="background:linear-gradient(135deg,#FFE0E0,#FFD0D0)">🔊</div>
+        <div>
+          <h3>Satisfying Sound Design</h3>
+          <p>Every click, combo, level-up, and achievement triggers unique Web Audio API tones — crisp, rewarding audio that makes the game feel amazing to play.</p>
+        </div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap" style="background:linear-gradient(135deg,#E0FFF5,#CCFFF0)">💾</div>
+        <div>
+          <h3>Auto-Save Progress</h3>
+          <p>Your score, level, upgrades, and achievements save automatically every 15 seconds to your browser. Close the tab and come back — your cookies wait!</p>
+        </div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap" style="background:linear-gradient(135deg,#FFFBE0,#FFF5C0)">📱</div>
+        <div>
+          <h3>Mobile-Optimised</h3>
+          <p>Click Cookies is fully touch-friendly and works seamlessly on phones, tablets, and desktops. Play the sweetest game anywhere, anytime.</p>
+        </div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap" style="background:linear-gradient(135deg,#FFE8E0,#FFD8C8)">📋</div>
+        <div>
+          <h3>Cookie Discovery Catalogue</h3>
+          <p>Track every cookie type you've ever clicked in the in-game catalogue. Undiscovered cookies show as mystery entries to drive your collector's spirit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     SECTION 6: UPGRADES INFO
+     ================================================================ -->
+<section id="upgrades">
+  <div class="section-inner">
+    <div class="text-center reveal">
+      <div class="section-tag">🔧 Power-Ups</div>
+      <h2 class="section-title">Upgrades That Change Everything</h2>
+      <p class="section-sub">Spend wisely — the right upgrade at the right level can multiply your score by hundreds of times. Here's what's on the menu.</p>
+    </div>
+    <div class="upgrades-showcase reveal">
+      <div class="upgrade-showcase-card">
+        <div class="ug-icon">👆</div>
+        <h4>Bigger Clicks</h4>
+        <p>Each click earns 50% more points. Stack it 5 times for a 2.5× baseline multiplier on every cookie you catch.</p>
+        <div class="ug-cost">From 🍪 100 pts</div>
+      </div>
+      <div class="upgrade-showcase-card">
+        <div class="ug-icon">🌧️</div>
+        <h4>Cookie Rain</h4>
+        <p>Cookies spawn 20% faster, so more targets rain down at once — great for combo chaining and score bursts.</p>
+        <div class="ug-cost">From 🍪 200 pts</div>
+      </div>
+      <div class="upgrade-showcase-card">
+        <div class="ug-icon">🧲</div>
+        <h4>Cookie Magnet</h4>
+        <p>Never miss a cookie again! The magnet auto-collects any cookie that would have hit the ground, protecting your streak.</p>
+        <div class="ug-cost">🍪 500 pts</div>
+      </div>
+      <div class="upgrade-showcase-card">
+        <div class="ug-icon">✌️</div>
+        <h4>Double Dough</h4>
+        <p>Activate a 30-second window where every cookie you catch earns double points. Time it with a combo for insane results.</p>
+        <div class="ug-cost">🍪 750 pts</div>
+      </div>
+      <div class="upgrade-showcase-card">
+        <div class="ug-icon">🐢</div>
+        <h4>Slow Drizzle</h4>
+        <p>Slows all falling cookies by 25%, giving you more reaction time to prioritise rare and epic cookie types.</p>
+        <div class="ug-cost">From 🍪 400 pts</div>
+      </div>
+      <div class="upgrade-showcase-card">
+        <div class="ug-icon">🎁</div>
+        <h4>Bonus Batch</h4>
+        <p>Each spawn event has a 30% chance to fire an extra cookie immediately, flooding the arena with click opportunities.</p>
+        <div class="ug-cost">From 🍪 600 pts</div>
+      </div>
+      <div class="upgrade-showcase-card">
+        <div class="ug-icon">✨</div>
+        <h4>Golden Touch</h4>
+        <p>Increases the chance of Golden and Legendary cookies appearing in the arena — the highest-value targets in the game.</p>
+        <div class="ug-cost">From 🍪 1,000 pts</div>
+      </div>
+      <div class="upgrade-showcase-card">
+        <div class="ug-icon">❄️</div>
+        <h4>Time Freeze</h4>
+        <p>Stops all cookies mid-air for 5 seconds — the perfect opportunity to clear the entire screen with surgical precision.</p>
+        <div class="ug-cost">🍪 1,500 pts</div>
+      </div>
+      <div class="upgrade-showcase-card">
+        <div class="ug-icon">3️⃣</div>
+        <h4>Triple Threat</h4>
+        <p>The ultimate click multiplier — all point values tripled permanently. Combined with Double Dough this is a 6× mega boost.</p>
+        <div class="ug-cost">🍪 3,000 pts</div>
+      </div>
+      <div class="upgrade-showcase-card">
+        <div class="ug-icon">🤖</div>
+        <h4>Auto Baker</h4>
+        <p>Your very own robotic clicking assistant automatically catches one cookie per second. Upgrade it up to 5 times for 5/sec!</p>
+        <div class="ug-cost">From 🍪 5,000 pts</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     SECTION 7: ACHIEVEMENTS
+     ================================================================ -->
+<section id="achievements">
+  <div class="section-inner">
+    <div class="text-center reveal">
+      <div class="section-tag">🏅 Hall of Fame</div>
+      <h2 class="section-title">21 Achievements to Unlock</h2>
+      <p class="section-sub">Every achievement you earn is proof of your cookie mastery. How many can you collect? Some require patience, others require lightning-fast reflexes.</p>
+    </div>
+    <div class="achievements-showcase reveal">
+      <div class="ach-showcase-card"><span class="a-icon">🍪</span><div><h4>First Bite</h4><p>Click your very first cookie</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">🔥</span><div><h4>Getting Warmed Up</h4><p>Click 10 cookies total</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">😋</span><div><h4>Cookie Addict</h4><p>Click 100 cookies</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">⚡</span><div><h4>Click Machine</h4><p>Click 1,000 cookies</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">🏆</span><div><h4>Click Legend</h4><p>Click 10,000 cookies</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">⭐</span><div><h4>Sweet Start</h4><p>Earn 500 total points</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">💫</span><div><h4>Sugar Rush</h4><p>Earn 5,000 total points</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">💰</span><div><h4>Cookie Millionaire</h4><p>Earn 50,000 total points</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">🌟</span><div><h4>Cookie Billionaire</h4><p>Earn 1,000,000 total points</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">🎯</span><div><h4>Halfway There</h4><p>Reach Level 5</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">👑</span><div><h4>Cookie God</h4><p>Reach the legendary Level 10</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">🏅</span><div><h4>Golden Moment</h4><p>Click your first Golden Cookie</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">🥇</span><div><h4>Gold Rush</h4><p>Click 10 Golden Cookies</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">🌑</span><div><h4>Into the Void</h4><p>Click a rare Void Cookie</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">🎪</span><div><h4>Perfect Catcher</h4><p>Catch 50 cookies without missing one</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">🔧</span><div><h4>Upgrade Initiate</h4><p>Purchase your first upgrade</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">⚙️</span><div><h4>Upgrade Enthusiast</h4><p>Purchase 5 upgrades</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">📋</span><div><h4>Cookie Collector</h4><p>Click every type of cookie at least once</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">🔥</span><div><h4>Combo King</h4><p>Reach a blazing 10x combo</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">💥</span><div><h4>Combo God</h4><p>Achieve an insane 50x combo</p></div></div>
+      <div class="ach-showcase-card"><span class="a-icon">⏱️</span><div><h4>Dedicated Baker</h4><p>Play continuously for 5 minutes</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     SECTION 8: LEADERBOARD
+     ================================================================ -->
+<section id="leaderboard">
+  <div class="section-inner">
+    <div class="text-center reveal">
+      <div class="section-tag">🏅 Rankings</div>
+      <h2 class="section-title">Global Cookie Leaderboard</h2>
+      <p class="section-sub">Where do you rank among the world's best cookie catchers? Play the game, earn points, and climb your way to the top!</p>
+    </div>
+    <div class="leaderboard-table-wrap reveal">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Player</th><th>Score</th><th>Level</th></tr>
+        </thead>
+        <tbody id="leaderboard-body">
+          <tr><td>🥇</td><td>CookieMaster99</td><td>9.8M</td><td>10</td></tr>
+          <tr><td>🥈</td><td>SweetClicker</td><td>4.5M</td><td>10</td></tr>
+          <tr><td>🥉</td><td>BiscuitLord</td><td>2.3M</td><td>9</td></tr>
+          <tr><td>4</td><td>ChocoDrop</td><td>980K</td><td>9</td></tr>
+          <tr><td>5</td><td>CrunchTime</td><td>542K</td><td>8</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     SECTION 9: ABOUT / SEO CONTENT
+     ================================================================ -->
+<section id="about-game">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <h2>What is Click Cookies?</h2>
+        <p>Click Cookies is a free, browser-based cookie clicking game that combines classic arcade reflexes with modern idle-game progression. Cookies of every shape, rarity, and flavour rain down from the top of the screen — and your job is to click or tap them as fast as possible before they hit the floor.</p>
+        <p>Unlike traditional cookie clicker games where you click a static object, Click Cookies puts you in an active, fast-paced arena. Each session demands quick reactions, smart upgrade choices, and strategic combo building to rise through 10 progressively challenging levels.</p>
+        <p>Whether you're a casual player sneaking in five minutes on your lunch break or a dedicated high-score chaser grinding for the Cookie God title, Click Cookies delivers endless sweet satisfaction with no downloads, no logins, and no cost whatsoever.</p>
+        <div class="about-mini-badges">
+          <span class="about-mini-badge">🎮 Browser Game</span>
+          <span class="about-mini-badge">📱 Mobile Friendly</span>
+          <span class="about-mini-badge">💾 Auto-Saves</span>
+          <span class="about-mini-badge">🔊 Audio Effects</span>
+          <span class="about-mini-badge">🆓 100% Free</span>
+          <span class="about-mini-badge">🚫 No Download</span>
+        </div>
+      </div>
+      <div class="about-visual reveal">
+        <div class="about-big-emoji">🍪</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     SECTION 10: FAQ
+     ================================================================ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="text-center reveal">
+      <div class="section-tag">❓ FAQ</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub">Everything you ever wanted to know about Click Cookies, answered fresh from the oven.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-q">How do I play Click Cookies? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Simply press the Start Game button in the arena above. Cookies will fall from the top of the screen, and you need to click or tap each one before it reaches the bottom. Every catch earns points, and rarer cookies give you far more. Miss too many and your combo streak resets!</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is Click Cookies completely free? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Yes! Click Cookies is 100% free to play with no hidden purchases, subscriptions, or in-app payments of any kind. Just open the page and start clicking. No sign-up required.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How many cookie types are in the game? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">There are 21 unique cookie types across six rarity tiers: Common, Uncommon, Rare, Epic, Legendary, and Mythic. Common cookies like the Classic Cookie appear frequently, while Mythic cookies like the Void Cookie and Infinity Cookie are extremely rare and worth massive points.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How does the combo system work? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Each time you click a cookie, your combo counter goes up by one. Click rapidly without letting cookies fall to build your multiplier. At 3x+ your combo bonus activates, adding extra points to each cookie you catch. Your combo resets after 2.5 seconds without a click, or if you miss a cookie (unless you have the Cookie Magnet upgrade).</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does Click Cookies save my progress? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Yes! Click Cookies saves your score, level, upgrades, achievements, and cookie catalogue automatically every 15 seconds using your browser's local storage. You can safely close the tab and all your progress will be there when you return. Use the Reset button only if you want to start from scratch.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What are the best upgrades to buy first? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">We recommend starting with Bigger Clicks (boosts every cookie's value) then Slow Drizzle (more reaction time). Once you can afford it, the Cookie Magnet is a game-changer as it prevents all misses and protects your combo streak. Save up for Triple Threat later for the ultimate score explosion.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I play Click Cookies on my phone? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Absolutely! Click Cookies is fully optimised for touchscreens. The game detects touch events natively, so tapping a falling cookie works exactly the same as clicking it with a mouse. The arena and UI scale perfectly across all mobile screen sizes.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I unlock Mythic cookies? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Mythic cookies like the Void Cookie (500 pts) and Infinity Cookie (1,000 pts) require you to reach Level 10 first. Once unlocked, they appear randomly with a 3% spawn weight. The Golden Touch upgrade increases legendary and rare spawns, so it indirectly helps you encounter these ultra-rare treasures more frequently.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     CTA BANNER
+     ================================================================ -->
+<section id="cta-banner">
+  <h2>Ready to Become Cookie God?</h2>
+  <p>Thousands of cookies are waiting to be clicked. Your bakery throne awaits!</p>
+  <button class="btn-cta-big" onclick="document.getElementById('game').scrollIntoView({behavior:'smooth'})">
+    🍪 Play Click Cookies — Free!
+  </button>
+</section>
+
+<!-- Footer placeholder -->
+<div id="footer-placeholder"></div>
+
+<!-- ── Scripts ── -->
+<script src="js/header.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/game.js"></script>
+<script src="js/ui.js"></script>
+
+</body>
+</html>
