@@ -942,7 +942,7 @@ section { padding: 88px 24px; }
   position: relative;
   height: 480px;
   overflow: hidden;
-  background-image: url('/images/background.png');
+  background-image: url('/images/background.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
