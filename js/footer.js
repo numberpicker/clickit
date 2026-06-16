@@ -5,7 +5,7 @@
   <footer class="site-footer" id="site-footer">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="index.html" class="footer-logo">
+        <a href="/" class="footer-logo">
           <span class="logo-icon">🍪</span>
           <span class="logo-text">Click<span class="logo-accent">Cookies</span></span>
         </a>
