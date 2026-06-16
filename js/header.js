@@ -4,19 +4,19 @@
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <div class="header-logo">
-        <a href="index.html" class="logo-link">
+        <a href="/" class="logo-link">
           <span class="logo-icon">🍪</span>
           <span class="logo-text">Click<span class="logo-accent">Cookies</span></span>
         </a>
       </div>
       <nav class="header-nav" id="header-nav">
         <ul class="nav-list">
-          <li><a href="#game" class="nav-link">Play Now</a></li>
-          <li><a href="#how-to-play" class="nav-link">How to Play</a></li>
-          <li><a href="#cookie-types" class="nav-link">Cookie Types</a></li>
-          <li><a href="#upgrades" class="nav-link">Upgrades</a></li>
-          <li><a href="#leaderboard" class="nav-link">Leaderboard</a></li>
-          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li><a href="/#game" class="nav-link">Play Now</a></li>
+          <li><a href="/#how-to-play" class="nav-link">How to Play</a></li>
+          <li><a href="/#cookie-types" class="nav-link">Cookie Types</a></li>
+          <li><a href="/#upgrades" class="nav-link">Upgrades</a></li>
+          <li><a href="/#leaderboard" class="nav-link">Leaderboard</a></li>
+          <li><a href="/#faq" class="nav-link">FAQ</a></li>
         </ul>
       </nav>
       <div class="header-actions">
