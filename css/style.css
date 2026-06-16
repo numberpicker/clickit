@@ -937,3 +937,16 @@ section { padding: 88px 24px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+/* Add this to the #game-area section */
+#game-area {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+  background-image: url('path/to/your/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Keep existing background as fallback */
+  background-color: var(--cream);
+  cursor: crosshair;
+}
