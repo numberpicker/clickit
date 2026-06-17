@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SF69M360L7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SF69M360L7');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2048 Cookies – Sliding Cookie Puzzle Game | clickcookies</title>
+  <title>2048 Cookies – Sliding Cookie Puzzle Game | clickcookies.com</title>
   <meta name="description" content="Play 2048 Cookies free online! Slide and merge delicious cookie tiles to reach the legendary Infinity Cookie. A sweet twist on the classic 2048 puzzle game — no download needed!" />
   <meta name="keywords" content="2048 cookies, 2048 cookie game, cookie puzzle game, 2048 game, sliding puzzle, merge cookies, browser puzzle game, free 2048, cookie clicker 2048, 2048 tiles" />
-  <meta name="author" content="clickcookies" />
+  <meta name="author" content="www.clickcookies.com" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.clickcookies.com/2048" />
 
@@ -24,7 +15,7 @@
   <meta property="og:description" content="Merge cookie tiles to reach the legendary Infinity Cookie in this sweet twist on the classic 2048 puzzle. Free to play, no download!" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.clickcookies.com/2048" />
-  <meta property="og:image" content="https://www.clickcookies.com/images/og-2048.png" />
+  <meta property="og:image" content="https://www.clickcookies.com/assets/og-2048.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -318,41 +309,52 @@
     }
     #game-board {
       --gap: 10px;
-      --cell: min(calc((min(90vw,460px) - 40px - 3*var(--gap))/4), 108px);
-      display: grid; grid-template-columns: repeat(4, var(--cell));
+      --cell: min(calc((min(88vw, 460px) - 40px - 5*var(--gap)) / 4), 108px);
+      background: #EDD5B8; border-radius: 12px; padding: var(--gap);
+      position: relative;           /* needed for overlay + tile-layer */
+      display: inline-grid;         /* shrink-wrap so overlay covers exactly */
+      grid-template-columns: repeat(4, var(--cell));
       grid-template-rows:    repeat(4, var(--cell));
       gap: var(--gap);
-      background: #EDD5B8; border-radius: 12px; padding: var(--gap);
-      position: relative;
       touch-action: none; user-select: none;
     }
     .cell-bg {
       background: rgba(255,255,255,.45); border-radius: 10px;
     }
+    /* Tile layer sits on top of the background grid cells */
+    #tile-layer {
+      position: absolute;
+      inset: var(--gap);            /* same inset as grid padding */
+      display: grid;
+      grid-template-columns: repeat(4, var(--cell));
+      grid-template-rows:    repeat(4, var(--cell));
+      gap: var(--gap);
+      pointer-events: none;         /* clicks pass through to board for swipe */
+    }
     .tile {
       border-radius: 10px;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      position: absolute;
-      width: var(--cell); height: var(--cell);
-      transition: top .1s ease, left .1s ease;
+      /* grid-column / grid-row set by JS */
+      width: 100%; height: 100%;
       box-shadow: 0 3px 12px rgba(0,0,0,.14);
       animation: tile-appear .15s ease both;
-      cursor: default;
+      pointer-events: auto;
+      overflow: hidden;
     }
     @keyframes tile-appear { 0%{transform:scale(0);opacity:0} 80%{transform:scale(1.06)} 100%{transform:scale(1);opacity:1} }
     .tile.merged { animation: tile-merge .18s ease both; }
     @keyframes tile-merge { 0%{transform:scale(1)} 40%{transform:scale(1.22)} 100%{transform:scale(1)} }
-    .tile-emoji { font-size: calc(var(--cell) * .44); line-height: 1; pointer-events:none; }
+    .tile-emoji { font-size: calc(var(--cell) * .42); line-height: 1; pointer-events:none; }
     .tile-name  {
-      font-size: calc(var(--cell) * .13); font-weight: 800;
+      font-size: clamp(8px, calc(var(--cell) * .13), 14px); font-weight: 800;
       color: rgba(0,0,0,.65); text-align: center; line-height: 1.2;
       padding: 0 4px; pointer-events:none;
       white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 90%;
     }
     .tile-val {
       font-family: var(--font-display);
-      font-size: calc(var(--cell) * .18); color: rgba(0,0,0,.5);
+      font-size: clamp(9px, calc(var(--cell) * .17), 18px); color: rgba(0,0,0,.5);
       line-height: 1; pointer-events:none;
     }
 
@@ -641,7 +643,7 @@
       .hamburger { display:flex; }
       .btn-play-header { display:none; }
       section { padding:52px 14px; }
-      #game-board { --cell: min(calc((100vw - 40px - 30px)/4), 88px); }
+      #game-board { --cell: min(calc((100vw - 28px - 5*10px) / 4), 88px); }
       .hero-2048 h1 { font-size:2.2rem; }
       .score-row { gap:10px; }
       .score-box { padding:10px 16px; min-width:100px; }
@@ -655,30 +657,7 @@
 <!-- ══════════════════════════════════════════════
      HEADER
 ══════════════════════════════════════════════ -->
-<header class="site-header" id="site-header">
-  <div class="header-inner">
-    <a href="index.html" class="logo-link">
-      <span class="logo-icon">🍪</span>
-      <span class="logo-text">Click<span class="logo-accent">Cookies</span></span>
-    </a>
-    <nav class="header-nav" id="header-nav">
-      <ul class="nav-list">
-        <li><a href="index.html" class="nav-link">🎮 Click Cookies</a></li>
-        <li><a href="#game" class="nav-link active">2048</a></li>
-        <li><a href="#how-to-play" class="nav-link">How to Play</a></li>
-        <li><a href="#cookie-ladder" class="nav-link">Cookie Ladder</a></li>
-        <li><a href="#strategy" class="nav-link">Strategy</a></li>
-        <li><a href="#faq" class="nav-link">FAQ</a></li>
-      </ul>
-    </nav>
-    <div class="header-actions">
-      <button class="btn-play-header" onclick="scrollToGame()">🍪 Play 2048</button>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
+<div id="header-placeholder"></div>
 
 <!-- Win toast -->
 <div class="win-toast" id="win-toast"></div>
@@ -769,6 +748,8 @@
           <div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div>
           <div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div>
           <div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div>
+          <!-- Tile layer — tiles are placed here via grid-column/grid-row -->
+          <div id="tile-layer"></div>
           <!-- Board overlay (win/lose) -->
           <div class="board-overlay hidden" id="board-overlay">
             <div style="font-size:3.5rem;" id="overlay-emoji">🎉</div>
@@ -1065,55 +1046,11 @@
 <!-- ══════════════════════════════════════════════
      FOOTER
 ══════════════════════════════════════════════ -->
-<footer class="site-footer">
-  <div class="footer-top">
-    <div class="footer-brand">
-      <a href="index.html" class="footer-logo">
-        <span class="logo-icon" style="animation:none">🍪</span>
-        <span class="logo-text">Click<span class="logo-accent">Cookies</span></span>
-      </a>
-      <p class="footer-tagline">The sweetest collection of free cookie games on the internet. Click, slide, merge, and bake your way to cookie legend status!</p>
-      <div class="footer-social">
-        <a href="#" aria-label="Twitter" class="social-icon">𝕏</a>
-        <a href="#" aria-label="Discord" class="social-icon">💬</a>
-        <a href="#" aria-label="YouTube" class="social-icon">▶</a>
-        <a href="#" aria-label="Reddit"  class="social-icon">🔴</a>
-      </div>
-    </div>
-    <div class="footer-links">
-      <div class="footer-col">
-        <h4>Games</h4>
-        <ul>
-          <li><a href="index.html">Click Cookies</a></li>
-          <li><a href="2048">2048 Cookies</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>2048 Cookies</h4>
-        <ul>
-          <li><a href="#game">Play Now</a></li>
-          <li><a href="#how-to-play">How to Play</a></li>
-          <li><a href="#cookie-ladder">Cookie Ladder</a></li>
-          <li><a href="#strategy">Strategy Guide</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Use</a></li>
-          <li><a href="#">Cookie Policy</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; <span id="footer-year"></span> www.clickcookies.com — All rights reserved.</p>
-    <p>Made with 🍪 and lots of sugar</p>
-  </div>
-</footer>
+<div id="footer-placeholder"></div>
+
+<!-- ── Scripts ── -->
+<script src="/js/header.js"></script>
+<script src="/js/footer.js"></script>
 
 <!-- ══════════════════════════════════════════════
      GAME ENGINE
@@ -1312,34 +1249,26 @@ const G = (function () {
 
   /* ── Render Board ── */
   function renderBoard(newMergeVals = []) {
-    // Remove old tiles
-    board.querySelectorAll('.tile').forEach(t => t.remove());
+    const layer = document.getElementById('tile-layer');
+    layer.querySelectorAll('.tile').forEach(t => t.remove());
 
-    const gap  = 10;
-    const cell = getCellSize();
-
-    for (let r=0;r<4;r++) {
-      for (let c=0;c<4;c++) {
+    for (let r = 0; r < 4; r++) {
+      for (let c = 0; c < 4; c++) {
         const v = grid[r][c];
         if (!v) continue;
         const ck = COOKIES[v] || { emoji:'🌟', name:'Beyond', cls:'t-8192', rarity:'mythic' };
         const tile = document.createElement('div');
         tile.className = 'tile ' + ck.cls + (newMergeVals.includes(v) ? ' merged' : '');
-        tile.style.top  = (gap + r*(cell+gap)) + 'px';
-        tile.style.left = (gap + c*(cell+gap)) + 'px';
-        tile.innerHTML = `
-          <span class="tile-emoji">${ck.emoji}</span>
-          <span class="tile-name">${ck.name}</span>
-          <span class="tile-val">${v}</span>`;
-        board.appendChild(tile);
+        // Place via CSS grid — row/col are 1-indexed
+        tile.style.gridColumn = (c + 1).toString();
+        tile.style.gridRow    = (r + 1).toString();
+        tile.innerHTML =
+          `<span class="tile-emoji">${ck.emoji}</span>` +
+          `<span class="tile-name">${ck.name}</span>` +
+          `<span class="tile-val">${v}</span>`;
+        layer.appendChild(tile);
       }
     }
-  }
-
-  function getCellSize() {
-    const boardW = board.getBoundingClientRect().width;
-    const gap = 10;
-    return (boardW - gap * 5) / 4;
   }
 
   /* ── Score UI ── */
