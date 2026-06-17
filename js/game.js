@@ -9,7 +9,7 @@ const CookieGame = (function () {
     { id: 'peanut',       name: 'Peanut Butter',         image: 'images/peanut-butter.png', points: 4,    rarity: 'common',    color: '#C8A96E', speed: 3.2, size: 50, requiredLevel: 2  },
     { id: 'oatmeal',      name: 'Oatmeal Raisin',        image: 'images/oatmeal-raisin.png', points: 5,    rarity: 'common',    color: '#A0785A', speed: 3.0, size: 52, requiredLevel: 2  },
     { id: 'snickerdoodle',name: 'Snickerdoodle',         image: 'images/snickerdoodle.png', points: 6,    rarity: 'uncommon',  color: '#F4A460', speed: 3.5, size: 50, requiredLevel: 3  },
-    { id: 'macaroon',     name: 'Coconut Macaroon',      image: 'images/coconut-macaroon.png', points: 8,    rarity: 'uncommon',  color: '#FFF8DC', speed: 3.3, size: 48, requiredLevel: 3  },
+    { id: 'macaroon',     name: 'Coconut Macaroon',      image: 'images/coconut-macaron.png', points: 8,    rarity: 'uncommon',  color: '#FFF8DC', speed: 3.3, size: 48, requiredLevel: 3  },
     { id: 'ginger',       name: 'Gingerbread',           image: 'images/gingerbread.png', points: 10,   rarity: 'uncommon',  color: '#8B4513', speed: 3.8, size: 54, requiredLevel: 4  },
     { id: 'macaron',      name: 'French Macaron',        image: 'images/french-macaron.png', points: 12,   rarity: 'uncommon',  color: '#FFB6C1', speed: 4.0, size: 50, requiredLevel: 4  },
     { id: 'lemon',        name: 'Lemon Drizzle',         image: 'images/lemon-drizzle.png', points: 15,   rarity: 'uncommon',  color: '#FFF44F', speed: 4.2, size: 48, requiredLevel: 5  },
