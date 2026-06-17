@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SF69M360L7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SF69M360L7');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2048 Cookies – Sliding Cookie Puzzle Game | clickcookies</title>
+  <meta name="description" content="Play 2048 Cookies free online! Slide and merge delicious cookie tiles to reach the legendary Infinity Cookie. A sweet twist on the classic 2048 puzzle game — no download needed!" />
+  <meta name="keywords" content="2048 cookies, 2048 cookie game, cookie puzzle game, 2048 game, sliding puzzle, merge cookies, browser puzzle game, free 2048, cookie clicker 2048, 2048 tiles" />
+  <meta name="author" content="clickcookies" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.clickcookies.com/2048" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="2048 Cookies – Sliding Cookie Puzzle Game" />
+  <meta property="og:description" content="Merge cookie tiles to reach the legendary Infinity Cookie in this sweet twist on the classic 2048 puzzle. Free to play, no download!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.clickcookies.com/2048" />
+  <meta property="og:image" content="https://www.clickcookies.com/images/og-2048.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="2048 Cookies – Play Free Online" />
+  <meta name="twitter:description" content="Slide, merge, and bake your way to the legendary Infinity Cookie!" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍪</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DH0NXE4ME3"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DH0NXE4ME3');</script>
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9759808041159779" crossorigin="anonymous"></script>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context":"https://schema.org",
+      "@type":"VideoGame",
+      "name":"2048 Cookies",
+      "url":"https://www.clickcookies.com/2048",
+      "description":"2048 Cookies is a free browser puzzle game where players slide cookie tiles on a 4×4 grid, merging matching cookies to unlock sweeter and rarer varieties, ultimately aiming for the legendary Infinity Cookie tile.",
+      "genre":["Puzzle","Casual","Strategy"],
+      "playMode":"SinglePlayer",
+      "applicationCategory":"Game",
+      "operatingSystem":"Web Browser",
+      "inLanguage":"en",
+      "isAccessibleForFree":true,
+      "publisher":{"@type":"Organization","name":"www.clickcookies.com","url":"https://www.clickcookies.com"},
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+    },
+    {
+      "@context":"https://schema.org",
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://www.clickcookies.com/"},
+        {"@type":"ListItem","position":2,"name":"2048 Cookies","item":"https://www.clickcookies.com/2048"}
+      ]
+    },
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"How do you play 2048 Cookies?","acceptedAnswer":{"@type":"Answer","text":"Use arrow keys or swipe to slide all cookie tiles on a 4×4 grid. When two identical cookies collide, they merge into the next rarity tier. The goal is to keep merging until you reach the legendary Infinity Cookie (2048 tile)."}},
+        {"@type":"Question","name":"What is the highest cookie in 2048 Cookies?","acceptedAnswer":{"@type":"Answer","text":"The highest cookie is the Infinity Cookie, representing the 2048 tile. Above that you can continue playing to achieve Super Nova and beyond in endless mode."}},
+        {"@type":"Question","name":"Does 2048 Cookies save my progress?","acceptedAnswer":{"@type":"Answer","text":"Yes! Your current game board, score, and best score are automatically saved to your browser's local storage so you can pick up right where you left off."}},
+        {"@type":"Question","name":"Can I undo a move in 2048 Cookies?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can undo your last move once per turn using the Undo button. This gives you a safety net when an accidental swipe would cost you the game."}},
+        {"@type":"Question","name":"Is 2048 Cookies free to play?","acceptedAnswer":{"@type":"Answer","text":"Completely free! No downloads, no sign-ups, no payments. Just open the page and start sliding cookies."}}
+      ]
+    }
+  ]
+  </script>
+
+  <style>
+    /* ================================================================
+       CSS Variables & Reset
+    ================================================================ */
+    :root {
+      --cream:        #FFF8F0;
+      --cream-2:      #FFF0DC;
+      --brown:        #8B4513;
+      --candy-pink:   #FF6B9D;
+      --candy-purple: #A855F7;
+      --candy-blue:   #3B82F6;
+      --candy-green:  #22C55E;
+      --candy-orange: #F97316;
+      --candy-yellow: #FCD34D;
+      --gold:         #F59E0B;
+      --text-dark:    #2D1B00;
+      --text-mid:     #5C3D1E;
+      --text-light:   #9A7B5A;
+      --white:        #FFFFFF;
+      --shadow:       0 4px 24px rgba(139,69,19,0.12);
+      --shadow-lg:    0 8px 40px rgba(139,69,19,0.18);
+      --radius:       18px;
+      --radius-sm:    10px;
+      --font-display: 'Fredoka One', cursive;
+      --font-body:    'Nunito', sans-serif;
+      --header-h:     68px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; outline: none; font-family: var(--font-body); }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--cream-2); }
+    ::-webkit-scrollbar-thumb { background: var(--candy-pink); border-radius: 8px; }
+
+    /* ================================================================
+       HEADER (shared with site)
+    ================================================================ */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      height: var(--header-h);
+      background: rgba(255,248,240,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid transparent;
+      transition: border-color .3s, box-shadow .3s;
+    }
+    .site-header.scrolled { border-color: var(--candy-pink); box-shadow: 0 4px 20px rgba(255,107,157,.15); }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      height: 100%; display: flex; align-items: center; gap: 24px;
+    }
+    .logo-link { display: flex; align-items: center; gap: 10px; }
+    .logo-icon { font-size: 32px; animation: spin-slow 8s linear infinite; display: inline-block; }
+    @keyframes spin-slow { to { transform: rotate(360deg); } }
+    .logo-text { font-family: var(--font-display); font-size: 1.7rem; color: var(--brown); }
+    .logo-accent { color: var(--candy-pink); }
+    .header-nav { flex: 1; }
+    .nav-list { display: flex; gap: 6px; justify-content: center; }
+    .nav-link {
+      padding: 6px 14px; border-radius: 20px;
+      font-weight: 700; font-size: .92rem; color: var(--text-mid);
+      transition: background .2s, color .2s;
+    }
+    .nav-link:hover, .nav-link.active { background: var(--candy-pink); color: #fff; }
+    .btn-play-header {
+      background: linear-gradient(135deg, var(--candy-pink), var(--candy-purple));
+      color: #fff; padding: 9px 20px; border-radius: 24px;
+      font-weight: 800; font-size: .9rem;
+      box-shadow: 0 3px 14px rgba(168,85,247,.35);
+      transition: transform .2s, box-shadow .2s; white-space: nowrap;
+    }
+    .btn-play-header:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(168,85,247,.45); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: transparent; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2.5px; background: var(--brown); border-radius: 3px; transition: all .3s; }
+    .hamburger.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    /* ================================================================
+       SECTIONS COMMONS
+    ================================================================ */
+    section { padding: 80px 24px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block; background: var(--candy-yellow); color: var(--brown);
+      padding: 4px 14px; border-radius: 20px; font-size: .78rem;
+      font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px;
+    }
+    .section-title { font-family: var(--font-display); font-size: clamp(1.9rem,4vw,2.9rem); color: var(--brown); margin-bottom: 14px; line-height: 1.15; }
+    .section-sub { font-size: 1.05rem; color: var(--text-mid); font-weight: 600; max-width: 600px; margin-bottom: 44px; }
+    .text-center { text-align: center; }
+    .text-center .section-sub { margin-left: auto; margin-right: auto; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ================================================================
+       HERO
+    ================================================================ */
+    .hero-2048 {
+      min-height: 52vh;
+      padding-top: var(--header-h);
+      background: linear-gradient(150deg, #FFF5E0 0%, #FFE4FA 50%, #E4F0FF 100%);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg { position: absolute; inset: 0; pointer-events: none; }
+    .hero-bg span {
+      position: absolute; font-size: 3rem; opacity: .10;
+      animation: float-bg 6s ease-in-out infinite;
+    }
+    .hero-bg span:nth-child(1) { top:8%; left:4%;  animation-delay:0s;   font-size:4rem; }
+    .hero-bg span:nth-child(2) { top:18%;right:6%; animation-delay:1.2s; font-size:2.8rem; }
+    .hero-bg span:nth-child(3) { bottom:20%;left:8%;  animation-delay:2s; }
+    .hero-bg span:nth-child(4) { bottom:12%;right:4%; animation-delay:.6s; font-size:4rem; }
+    .hero-bg span:nth-child(5) { top:45%; left:48%; animation-delay:1.8s; font-size:2.2rem; }
+    @keyframes float-bg { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-18px) rotate(8deg)} }
+
+    .hero-2048-inner {
+      max-width: 1200px; margin: 0 auto; padding: 56px 24px;
+      display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(90deg, var(--candy-pink), var(--candy-purple));
+      color: #fff; padding: 5px 16px; border-radius: 20px;
+      font-size: .8rem; font-weight: 800; letter-spacing: 1px;
+      text-transform: uppercase; margin-bottom: 18px;
+    }
+    .hero-2048 h1 { font-family: var(--font-display); font-size: clamp(2.6rem,5vw,4.2rem); color: var(--brown); line-height: 1.1; margin-bottom: 18px; }
+    .hero-2048 h1 .acc1 { color: var(--candy-pink); }
+    .hero-2048 h1 .acc2 { color: var(--candy-purple); }
+    .hero-desc { font-size: 1.08rem; color: var(--text-mid); font-weight: 600; max-width: 480px; margin-bottom: 30px; }
+    .hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 32px; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--candy-pink), var(--candy-purple));
+      color: #fff; padding: 14px 32px; border-radius: 28px;
+      font-family: var(--font-display); font-size: 1.1rem;
+      box-shadow: 0 6px 22px rgba(255,107,157,.4);
+      transition: transform .2s, box-shadow .2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(255,107,157,.5); }
+    .btn-secondary {
+      background: var(--white); color: var(--candy-purple);
+      border: 2.5px solid var(--candy-purple); padding: 12px 26px;
+      border-radius: 28px; font-family: var(--font-display); font-size: 1rem;
+      transition: background .2s, color .2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-secondary:hover { background: var(--candy-purple); color: #fff; }
+    .hero-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+    .hero-stat .stat-num { font-family: var(--font-display); font-size: 1.8rem; color: var(--candy-pink); line-height: 1; }
+    .hero-stat .stat-lbl { font-size: .78rem; color: var(--text-light); font-weight: 700; }
+
+    /* Mini tile preview */
+    .hero-tiles {
+      display: grid; grid-template-columns: repeat(2,1fr); gap: 10px;
+      flex-shrink: 0;
+    }
+    .hero-tile {
+      width: 72px; height: 72px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; box-shadow: 0 4px 14px rgba(0,0,0,.12);
+      animation: tile-pop .4s ease both;
+    }
+    .hero-tile:nth-child(1) { background:#FDEBD0; animation-delay:.0s; }
+    .hero-tile:nth-child(2) { background:#F8C8A8; animation-delay:.1s; }
+    .hero-tile:nth-child(3) { background:#F5A882; animation-delay:.2s; }
+    .hero-tile:nth-child(4) { background:#E8845A; animation-delay:.3s; }
+    @keyframes tile-pop { 0%{transform:scale(0) rotate(-15deg);opacity:0} 80%{transform:scale(1.08) rotate(3deg)} 100%{transform:scale(1) rotate(0);opacity:1} }
+
+    /* ================================================================
+       GAME SECTION
+    ================================================================ */
+    #game {
+      background: linear-gradient(160deg,#FFF5E8,#F5E8FF);
+      padding: 60px 24px;
+    }
+    .game-wrapper { max-width: 1100px; margin: 0 auto; }
+    .game-header-row { text-align: center; margin-bottom: 28px; }
+
+    /* Score row */
+    .score-row {
+      display: flex; justify-content: center; align-items: center; gap: 16px;
+      flex-wrap: wrap; margin-bottom: 20px;
+    }
+    .score-box {
+      background: var(--white); border-radius: var(--radius-sm);
+      padding: 12px 28px; text-align: center; box-shadow: var(--shadow);
+      border: 2px solid var(--cream-2); min-width: 120px;
+    }
+    .score-box .s-label { font-size: .72rem; font-weight: 800; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
+    .score-box .s-val { font-family: var(--font-display); font-size: 2rem; color: var(--brown); line-height: 1.1; }
+    .score-box.highlight { border-color: var(--candy-pink); }
+    .score-box.highlight .s-val { color: var(--candy-pink); }
+
+    /* Game controls */
+    .game-controls {
+      display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;
+    }
+    .btn-ctrl {
+      padding: 9px 20px; border-radius: 22px; font-weight: 800; font-size: .88rem;
+      display: inline-flex; align-items: center; gap: 6px;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .btn-ctrl:hover { transform: translateY(-2px); }
+    .btn-new  { background: linear-gradient(135deg,var(--candy-pink),var(--candy-purple)); color:#fff; box-shadow:0 4px 16px rgba(168,85,247,.3); }
+    .btn-undo { background: var(--white); color: var(--text-dark); border: 2px solid var(--cream-2); box-shadow: var(--shadow); }
+    .btn-undo:disabled { opacity:.45; cursor:not-allowed; }
+
+    /* Layout: board + sidebar */
+    .game-layout {
+      display: grid; grid-template-columns: 1fr 300px; gap: 24px; align-items: start;
+    }
+
+    /* ── 2048 Board ── */
+    .board-wrap {
+      background: var(--white); border-radius: var(--radius);
+      box-shadow: var(--shadow-lg); padding: 20px;
+      border: 3px solid var(--candy-pink);
+    }
+    #game-board {
+      --gap: 10px;
+      --cell: min(calc((min(90vw,460px) - 40px - 3*var(--gap))/4), 108px);
+      display: grid; grid-template-columns: repeat(4, var(--cell));
+      grid-template-rows:    repeat(4, var(--cell));
+      gap: var(--gap);
+      background: #EDD5B8; border-radius: 12px; padding: var(--gap);
+      position: relative;
+      touch-action: none; user-select: none;
+    }
+    .cell-bg {
+      background: rgba(255,255,255,.45); border-radius: 10px;
+    }
+    .tile {
+      border-radius: 10px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      position: absolute;
+      width: var(--cell); height: var(--cell);
+      transition: top .1s ease, left .1s ease;
+      box-shadow: 0 3px 12px rgba(0,0,0,.14);
+      animation: tile-appear .15s ease both;
+      cursor: default;
+    }
+    @keyframes tile-appear { 0%{transform:scale(0);opacity:0} 80%{transform:scale(1.06)} 100%{transform:scale(1);opacity:1} }
+    .tile.merged { animation: tile-merge .18s ease both; }
+    @keyframes tile-merge { 0%{transform:scale(1)} 40%{transform:scale(1.22)} 100%{transform:scale(1)} }
+    .tile-emoji { font-size: calc(var(--cell) * .44); line-height: 1; pointer-events:none; }
+    .tile-name  {
+      font-size: calc(var(--cell) * .13); font-weight: 800;
+      color: rgba(0,0,0,.65); text-align: center; line-height: 1.2;
+      padding: 0 4px; pointer-events:none;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 90%;
+    }
+    .tile-val {
+      font-family: var(--font-display);
+      font-size: calc(var(--cell) * .18); color: rgba(0,0,0,.5);
+      line-height: 1; pointer-events:none;
+    }
+
+    /* Tile colour palette (by power: 2^1 … 2^11+) */
+    .t-2    { background: #FDEBD0; }
+    .t-4    { background: #FAD7A0; }
+    .t-8    { background: #F8C5A0; }
+    .t-16   { background: #F5A882; }
+    .t-32   { background: #F1926A; }
+    .t-64   { background: #E8845A; }
+    .t-128  { background: linear-gradient(135deg,#F472B6,#EC4899); }
+    .t-256  { background: linear-gradient(135deg,#C084FC,#A855F7); }
+    .t-512  { background: linear-gradient(135deg,#60A5FA,#3B82F6); }
+    .t-1024 { background: linear-gradient(135deg,#34D399,#059669); }
+    .t-2048 { background: linear-gradient(135deg,#FCD34D,#F59E0B); box-shadow:0 0 24px rgba(245,158,11,.6); }
+    .t-4096 { background: linear-gradient(135deg,#FF6B9D,#A855F7,#3B82F6); box-shadow:0 0 28px rgba(168,85,247,.7); }
+    .t-8192 { background: linear-gradient(135deg,#000,#1a0533); box-shadow:0 0 32px #a855f7; }
+
+    /* Game overlay (win/lose) */
+    .board-overlay {
+      position: absolute; inset: 0; border-radius: 12px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; z-index: 50; text-align: center; padding: 24px;
+      backdrop-filter: blur(4px);
+    }
+    .board-overlay.hidden { display: none; }
+    .board-overlay.win  { background: rgba(252,211,77,.88); }
+    .board-overlay.lose { background: rgba(255,107,107,.82); }
+    .board-overlay h2 { font-family: var(--font-display); font-size: 2.4rem; color: var(--brown); }
+    .board-overlay p  { font-weight: 700; font-size: 1rem; color: var(--text-mid); }
+    .overlay-btns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .btn-overlay {
+      padding: 10px 22px; border-radius: 22px; font-weight: 800; font-size: .95rem;
+      transition: transform .15s;
+    }
+    .btn-overlay:hover { transform: translateY(-2px); }
+    .btn-keep-going { background: var(--white); color: var(--brown); border: 2px solid var(--brown); }
+    .btn-restart    { background: var(--candy-pink); color: #fff; }
+
+    /* ── Sidebar ── */
+    .game-sidebar { display: flex; flex-direction: column; gap: 16px; }
+
+    /* Cookie progress tracker */
+    .progress-panel {
+      background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 18px; border: 2px solid var(--cream-2);
+    }
+    .progress-panel h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--brown); margin-bottom: 12px; }
+    .progress-list { display: flex; flex-direction: column; gap: 8px; max-height: 340px; overflow-y: auto; }
+    .progress-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 7px 10px; border-radius: 10px;
+      border: 2px solid var(--cream-2); background: var(--cream);
+      transition: border-color .2s;
+    }
+    .progress-item.unlocked { border-color: var(--candy-green); }
+    .progress-item.current  { border-color: var(--candy-pink); background: #FFF0F6; }
+    .pi-emoji { font-size: 1.5rem; flex-shrink: 0; }
+    .pi-info  { flex: 1; min-width: 0; }
+    .pi-name  { font-size: .8rem; font-weight: 800; color: var(--text-dark); }
+    .pi-val   { font-size: .72rem; color: var(--text-light); }
+    .pi-lock  { font-size: 1rem; opacity: .4; }
+
+    /* Stats panel */
+    .stats-panel {
+      background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 18px; border: 2px solid var(--cream-2);
+    }
+    .stats-panel h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--brown); margin-bottom: 12px; }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .stat-item { text-align: center; padding: 10px; background: var(--cream); border-radius: 10px; }
+    .stat-item .si-val { font-family: var(--font-display); font-size: 1.4rem; color: var(--candy-pink); line-height: 1; }
+    .stat-item .si-lbl { font-size: .7rem; color: var(--text-light); font-weight: 700; }
+
+    /* D-pad mobile controls */
+    .dpad-wrap {
+      background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 16px; border: 2px solid var(--cream-2); text-align: center;
+    }
+    .dpad-wrap p { font-size: .78rem; color: var(--text-light); font-weight: 700; margin-bottom: 10px; }
+    .dpad {
+      display: grid; grid-template-columns: repeat(3,44px); grid-template-rows: repeat(3,44px);
+      gap: 4px; justify-content: center;
+    }
+    .dpad-btn {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--cream-2); color: var(--brown);
+      font-size: 1.3rem; display: flex; align-items: center; justify-content: center;
+      transition: background .15s, transform .1s; border: 2px solid rgba(0,0,0,.06);
+    }
+    .dpad-btn:hover  { background: var(--candy-pink); color: #fff; }
+    .dpad-btn:active { transform: scale(.9); }
+    .dpad-btn.up    { grid-column:2; grid-row:1; }
+    .dpad-btn.left  { grid-column:1; grid-row:2; }
+    .dpad-btn.center{ grid-column:2; grid-row:2; background: linear-gradient(135deg,var(--candy-pink),var(--candy-purple)); color:#fff; font-size:.9rem; font-weight:800; }
+    .dpad-btn.right { grid-column:3; grid-row:2; }
+    .dpad-btn.down  { grid-column:2; grid-row:3; }
+
+    /* Score animation */
+    .score-add {
+      position: fixed; font-family: var(--font-display); font-size: 1.4rem;
+      color: var(--candy-pink); font-weight: 900; pointer-events: none; z-index: 9999;
+      animation: score-fly .8s ease forwards;
+    }
+    @keyframes score-fly { 0%{opacity:1;transform:translateY(0) scale(1)} 100%{opacity:0;transform:translateY(-60px) scale(1.3)} }
+
+    /* Win toast */
+    .win-toast {
+      position: fixed; top: 90px; left: 50%; transform: translateX(-50%) translateY(-120px);
+      background: linear-gradient(135deg,var(--candy-yellow),var(--candy-orange));
+      color: var(--brown); padding: 14px 32px; border-radius: 20px;
+      font-family: var(--font-display); font-size: 1.15rem; text-align: center;
+      box-shadow: 0 8px 32px rgba(245,158,11,.5); z-index: 2000;
+      transition: transform .4s cubic-bezier(.34,1.56,.64,1); pointer-events:none;
+    }
+    .win-toast.show { transform: translateX(-50%) translateY(0); }
+
+    /* ================================================================
+       HOW TO PLAY
+    ================================================================ */
+    #how-to-play { background: var(--white); }
+    .steps-grid {
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(210px,1fr)); gap: 24px;
+    }
+    .step-card {
+      background: var(--cream); border-radius: var(--radius); padding: 28px 22px;
+      text-align: center; border: 2px solid var(--cream-2);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+      position: relative; overflow: hidden;
+    }
+    .step-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--candy-pink); }
+    .step-num { font-family: var(--font-display); font-size: 3.2rem; color: var(--candy-pink); opacity:.15; position: absolute; top:6px; right:14px; line-height:1; }
+    .step-icon { font-size: 2.8rem; margin-bottom: 12px; display: block; }
+    .step-card h3 { font-family: var(--font-display); font-size: 1.2rem; color: var(--brown); margin-bottom: 8px; }
+    .step-card p  { font-size: .88rem; color: var(--text-mid); font-weight: 600; }
+
+    /* ================================================================
+       COOKIE LADDER
+    ================================================================ */
+    #cookie-ladder { background: linear-gradient(160deg,#FFF0FA,#F0F0FF); }
+    .ladder-grid {
+      display: grid; grid-template-columns: repeat(auto-fill,minmax(148px,1fr)); gap: 14px;
+    }
+    .ladder-card {
+      border-radius: var(--radius); padding: 18px 12px; text-align: center;
+      box-shadow: var(--shadow); border: 2px solid var(--cream-2);
+      transition: transform .2s, box-shadow .2s; background: var(--white);
+    }
+    .ladder-card:hover { transform: translateY(-5px) rotate(-1deg); box-shadow: var(--shadow-lg); }
+    .lc-emoji { font-size: 2.6rem; margin-bottom: 8px; display:block; }
+    .lc-name  { font-size: .82rem; font-weight: 800; color: var(--text-dark); margin-bottom: 3px; }
+    .lc-val   { font-family: var(--font-display); font-size: 1rem; color: var(--candy-pink); }
+    .rarity-pill {
+      display: inline-block; padding: 2px 10px; border-radius: 10px;
+      font-size: .65rem; font-weight: 800; text-transform: capitalize; margin-bottom: 4px;
+    }
+    .rarity-pill.common    { background:#dcfce7;color:#166534; }
+    .rarity-pill.uncommon  { background:#dbeafe;color:#1e40af; }
+    .rarity-pill.rare      { background:#f3e8ff;color:#6b21a8; }
+    .rarity-pill.epic      { background:#fef3c7;color:#92400e; }
+    .rarity-pill.legendary { background:#fee2e2;color:#991b1b; }
+    .rarity-pill.mythic    { background:#fdf4ff;color:#86198f; }
+
+    /* ================================================================
+       FEATURES
+    ================================================================ */
+    #features { background: var(--white); }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(270px,1fr)); gap: 22px; }
+    .feature-card {
+      background: var(--cream); border-radius: var(--radius); padding: 26px;
+      border: 2px solid var(--cream-2); display: flex; gap: 16px; align-items: flex-start;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--candy-purple); }
+    .fi-wrap { width: 50px; height: 50px; border-radius: 13px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0; }
+    .feature-card h3 { font-family: var(--font-display); font-size: 1.08rem; color: var(--brown); margin-bottom: 5px; }
+    .feature-card p  { font-size: .87rem; color: var(--text-mid); font-weight: 600; line-height: 1.55; }
+
+    /* ================================================================
+       STRATEGY TIPS
+    ================================================================ */
+    #strategy { background: linear-gradient(160deg,#FFF8E0,#E8F0FF); }
+    .tips-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 18px; }
+    .tip-card {
+      background: var(--white); border-radius: var(--radius); padding: 22px;
+      box-shadow: var(--shadow); border-left: 5px solid var(--candy-pink);
+      transition: transform .2s;
+    }
+    .tip-card:hover { transform: translateY(-3px); }
+    .tip-num  { font-family: var(--font-display); font-size: 2rem; color: var(--candy-pink); opacity:.25; float:right; line-height:1; }
+    .tip-card h4 { font-family: var(--font-display); font-size: 1.05rem; color: var(--brown); margin-bottom: 6px; }
+    .tip-card p  { font-size: .87rem; color: var(--text-mid); font-weight: 600; line-height: 1.6; }
+
+    /* ================================================================
+       ABOUT
+    ================================================================ */
+    #about { background: linear-gradient(160deg,#FFF8F0,#F0FFF4); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-text h2 { font-family: var(--font-display); font-size: 2.1rem; color: var(--brown); margin-bottom: 14px; }
+    .about-text p  { font-size: .94rem; color: var(--text-mid); font-weight: 600; line-height: 1.75; margin-bottom: 13px; }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+    .badge {
+      background: var(--white); border: 2px solid var(--cream-2); border-radius: 20px;
+      padding: 5px 13px; font-size: .8rem; font-weight: 800; color: var(--text-mid);
+      display: flex; align-items: center; gap: 5px;
+    }
+    .about-visual { text-align: center; }
+    .about-tiles {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 8px;
+      max-width: 300px; margin: 0 auto;
+    }
+    .at { border-radius: 10px; aspect-ratio:1; display:flex; align-items:center; justify-content:center; font-size:1.6rem; box-shadow:0 3px 10px rgba(0,0,0,.1); }
+
+    /* ================================================================
+       FAQ
+    ================================================================ */
+    #faq { background: var(--white); }
+    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 13px; }
+    .faq-item { background: var(--cream); border-radius: var(--radius-sm); border: 2px solid var(--cream-2); overflow: hidden; transition: border-color .2s; }
+    .faq-item.open { border-color: var(--candy-pink); }
+    .faq-q { padding: 17px 22px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 800; font-size: .96rem; color: var(--text-dark); user-select: none; }
+    .faq-arrow { font-size: 1.1rem; transition: transform .3s; color: var(--candy-pink); flex-shrink:0; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a { max-height: 0; overflow: hidden; padding: 0 22px; font-size: .89rem; color: var(--text-mid); font-weight: 600; line-height: 1.7; transition: max-height .4s ease, padding .3s; }
+    .faq-item.open .faq-a { max-height: 260px; padding: 0 22px 16px; }
+
+    /* ================================================================
+       CTA BANNER
+    ================================================================ */
+    #cta {
+      background: linear-gradient(135deg,var(--candy-pink),var(--candy-purple),var(--candy-blue));
+      padding: 80px 24px; text-align: center; position: relative; overflow: hidden;
+    }
+    #cta::before {
+      content: '🍪 🎉 🏆 ✨ 🌈 💎 🦄 🌑';
+      position:absolute; top:10px; left:0; right:0;
+      font-size:1.8rem; opacity:.12; letter-spacing:20px;
+      white-space:nowrap; overflow:hidden;
+      animation: scroll-e 12s linear infinite;
+    }
+    @keyframes scroll-e { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    #cta h2 { font-family: var(--font-display); font-size: clamp(2rem,5vw,3.3rem); color:#fff; margin-bottom:14px; position:relative;z-index:1; }
+    #cta p  { color:rgba(255,255,255,.85); font-size:1.05rem; font-weight:700; margin-bottom:32px; position:relative;z-index:1; }
+    .btn-cta-big {
+      background:#fff; color:var(--candy-pink); padding:16px 44px;
+      border-radius:30px; font-family:var(--font-display); font-size:1.25rem;
+      box-shadow:0 8px 30px rgba(0,0,0,.2); transition:transform .2s,box-shadow .2s;
+      display:inline-flex; align-items:center; gap:10px; position:relative;z-index:1;
+    }
+    .btn-cta-big:hover { transform:translateY(-3px) scale(1.03); box-shadow:0 14px 38px rgba(0,0,0,.25); }
+
+    /* ================================================================
+       FOOTER
+    ================================================================ */
+    .site-footer { background: var(--text-dark); color:rgba(255,255,255,.8); }
+    .footer-top { max-width:1200px; margin:0 auto; padding:60px 24px 36px; display:grid; grid-template-columns:1fr 2fr; gap:56px; }
+    .footer-logo { display:inline-flex; align-items:center; gap:8px; margin-bottom:13px; }
+    .footer-logo .logo-text { font-family:var(--font-display); font-size:1.5rem; color:#fff; }
+    .footer-tagline { font-size:.87rem; line-height:1.65; margin-bottom:18px; color:rgba(255,255,255,.5); }
+    .footer-social { display:flex; gap:10px; }
+    .social-icon { width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:background .2s; }
+    .social-icon:hover { background:var(--candy-pink); }
+    .footer-links { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+    .footer-col h4 { font-family:var(--font-display); font-size:1rem; color:#fff; margin-bottom:14px; }
+    .footer-col ul { display:flex; flex-direction:column; gap:7px; }
+    .footer-col a { font-size:.87rem; color:rgba(255,255,255,.45); transition:color .2s; }
+    .footer-col a:hover { color:var(--candy-pink); }
+    .footer-bottom { max-width:1200px; margin:0 auto; padding:18px 24px; border-top:1px solid rgba(255,255,255,.08); display:flex; justify-content:space-between; align-items:center; font-size:.8rem; color:rgba(255,255,255,.32); flex-wrap:wrap; gap:6px; }
+
+    /* ================================================================
+       RESPONSIVE
+    ================================================================ */
+    @media (max-width:900px) {
+      .game-layout    { grid-template-columns:1fr; }
+      .game-sidebar   { flex-direction:row; flex-wrap:wrap; }
+      .progress-panel,.stats-panel,.dpad-wrap { flex:1; min-width:220px; }
+      .hero-2048-inner{ grid-template-columns:1fr; }
+      .hero-tiles     { display:none; }
+      .about-grid     { grid-template-columns:1fr; }
+      .footer-top     { grid-template-columns:1fr; gap:28px; }
+      .footer-links   { grid-template-columns:repeat(2,1fr); }
+    }
+    @media (max-width:640px) {
+      .nav-list { display:none; flex-direction:column; position:fixed; top:var(--header-h); left:0; right:0; background:var(--white); padding:20px; box-shadow:0 8px 24px rgba(0,0,0,.1); z-index:999; gap:4px; }
+      .header-nav.open .nav-list { display:flex; }
+      .hamburger { display:flex; }
+      .btn-play-header { display:none; }
+      section { padding:52px 14px; }
+      #game-board { --cell: min(calc((100vw - 40px - 30px)/4), 88px); }
+      .hero-2048 h1 { font-size:2.2rem; }
+      .score-row { gap:10px; }
+      .score-box { padding:10px 16px; min-width:100px; }
+      .footer-links { grid-template-columns:1fr; }
+    }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; } }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════════ -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo-link">
+      <span class="logo-icon">🍪</span>
+      <span class="logo-text">Click<span class="logo-accent">Cookies</span></span>
+    </a>
+    <nav class="header-nav" id="header-nav">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">🎮 Click Cookies</a></li>
+        <li><a href="#game" class="nav-link active">2048</a></li>
+        <li><a href="#how-to-play" class="nav-link">How to Play</a></li>
+        <li><a href="#cookie-ladder" class="nav-link">Cookie Ladder</a></li>
+        <li><a href="#strategy" class="nav-link">Strategy</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-play-header" onclick="scrollToGame()">🍪 Play 2048</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Win toast -->
+<div class="win-toast" id="win-toast"></div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 1: HERO
+══════════════════════════════════════════════ -->
+<section class="hero-2048" id="home">
+  <div class="hero-bg" aria-hidden="true">
+    <span>🍪</span><span>🌈</span><span>💎</span><span>🏆</span><span>✨</span>
+  </div>
+  <div class="hero-2048-inner">
+    <div class="hero-content">
+      <div class="hero-badge">🍪 Sweet Puzzle Game</div>
+      <h1>
+        <span class="acc1">2048</span> <span class="acc2">Cookies</span><br>
+        Merge &amp; Bake!
+      </h1>
+      <p class="hero-desc">
+        Slide cookie tiles on a 4×4 grid, merge matching flavours, and bake your way up from a humble Classic Cookie all the way to the legendary <strong>Infinity Cookie</strong>. The sweetest puzzle you'll ever play!
+      </p>
+      <div class="hero-cta-row">
+        <button class="btn-primary" onclick="scrollToGame()">🎮 Play Now — Free!</button>
+        <button class="btn-secondary" onclick="document.getElementById('how-to-play').scrollIntoView({behavior:'smooth'})">📖 How to Play</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="stat-num">13</div><div class="stat-lbl">Cookie Tiers</div></div>
+        <div class="hero-stat"><div class="stat-num">4×4</div><div class="stat-lbl">Grid</div></div>
+        <div class="hero-stat"><div class="stat-num">∞</div><div class="stat-lbl">Replayability</div></div>
+        <div class="hero-stat"><div class="stat-num">100%</div><div class="stat-lbl">Free</div></div>
+      </div>
+    </div>
+    <div class="hero-tiles" aria-hidden="true">
+      <div class="hero-tile">🍪</div>
+      <div class="hero-tile">🍫</div>
+      <div class="hero-tile">🌈</div>
+      <div class="hero-tile">💎</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 2: THE GAME
+══════════════════════════════════════════════ -->
+<section id="game">
+  <div class="game-wrapper">
+
+    <div class="game-header-row reveal">
+      <div class="section-tag">🍪 Play Now</div>
+      <h2 class="section-title">2048 Cookies Puzzle</h2>
+      <p class="section-sub" style="margin:0 auto;">Use arrow keys, WASD, or the d-pad below to slide. Merge two matching cookies to bake the next tier!</p>
+    </div>
+
+    <!-- Score row -->
+    <div class="score-row reveal">
+      <div class="score-box highlight">
+        <div class="s-label">Score</div>
+        <div class="s-val" id="score-display">0</div>
+      </div>
+      <div class="score-box">
+        <div class="s-label">Best</div>
+        <div class="s-val" id="best-display">0</div>
+      </div>
+      <div class="score-box">
+        <div class="s-label">Moves</div>
+        <div class="s-val" id="moves-display">0</div>
+      </div>
+      <div class="score-box">
+        <div class="s-label">Highest Cookie</div>
+        <div class="s-val" id="highest-display">🍪</div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="game-controls reveal">
+      <button class="btn-ctrl btn-new"  id="btn-new"  onclick="G.newGame()">🔄 New Game</button>
+      <button class="btn-ctrl btn-undo" id="btn-undo" onclick="G.undo()" disabled>↩ Undo</button>
+    </div>
+
+    <!-- Layout -->
+    <div class="game-layout reveal">
+
+      <!-- Board -->
+      <div class="board-wrap">
+        <div id="game-board" role="grid" aria-label="2048 Cookies game board">
+          <!-- 16 background cells -->
+          <div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div>
+          <div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div>
+          <div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div>
+          <div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div>
+          <!-- Board overlay (win/lose) -->
+          <div class="board-overlay hidden" id="board-overlay">
+            <div style="font-size:3.5rem;" id="overlay-emoji">🎉</div>
+            <h2 id="overlay-title">You Win!</h2>
+            <p id="overlay-msg">You baked the legendary Infinity Cookie!</p>
+            <div class="overlay-btns">
+              <button class="btn-overlay btn-keep-going" id="btn-keep-going" onclick="G.keepGoing()">Keep Going</button>
+              <button class="btn-overlay btn-restart" onclick="G.newGame()">New Game</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="game-sidebar">
+
+        <!-- D-pad -->
+        <div class="dpad-wrap">
+          <p>⌨️ Arrow keys / WASD / Swipe / D-pad</p>
+          <div class="dpad">
+            <button class="dpad-btn up"    onclick="G.move('up')"   aria-label="Move Up">▲</button>
+            <button class="dpad-btn left"  onclick="G.move('left')" aria-label="Move Left">◀</button>
+            <button class="dpad-btn center"onclick="G.newGame()"    aria-label="New Game">NEW</button>
+            <button class="dpad-btn right" onclick="G.move('right')"aria-label="Move Right">▶</button>
+            <button class="dpad-btn down"  onclick="G.move('down')" aria-label="Move Down">▼</button>
+          </div>
+        </div>
+
+        <!-- Cookie progress -->
+        <div class="progress-panel">
+          <h3>🍪 Cookie Progress</h3>
+          <div class="progress-list" id="progress-list"></div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-panel">
+          <h3>📊 Session Stats</h3>
+          <div class="stats-grid">
+            <div class="stat-item"><div class="si-val" id="stat-merges">0</div><div class="si-lbl">Merges</div></div>
+            <div class="stat-item"><div class="si-val" id="stat-moves">0</div><div class="si-lbl">Moves</div></div>
+            <div class="stat-item"><div class="si-val" id="stat-best">0</div><div class="si-lbl">Best Score</div></div>
+            <div class="stat-item"><div class="si-val" id="stat-games">0</div><div class="si-lbl">Games Played</div></div>
+          </div>
+        </div>
+
+      </div><!-- end sidebar -->
+    </div><!-- end game-layout -->
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 3: HOW TO PLAY
+══════════════════════════════════════════════ -->
+<section id="how-to-play">
+  <div class="section-inner">
+    <div class="text-center reveal">
+      <div class="section-tag">📖 Tutorial</div>
+      <h2 class="section-title">How to Play 2048 Cookies</h2>
+      <p class="section-sub">Master the sliding puzzle in minutes — but reaching the Infinity Cookie will take strategy, patience, and a serious sweet tooth.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <span class="step-num">1</span>
+        <span class="step-icon">🎮</span>
+        <h3>Start the Game</h3>
+        <p>The board begins with two cookie tiles placed randomly. Every cookie starts as a Classic Cookie (value 2) or a Chocolate Chip (value 4).</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-icon">⬆️</span>
+        <span class="step-num">2</span>
+        <h3>Slide the Tiles</h3>
+        <p>Press arrow keys, swipe on mobile, or tap the d-pad to slide <em>all</em> tiles in one direction. Every tile moves as far as it can go until it hits a wall or another tile.</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-icon">🍪+🍪</span>
+        <span class="step-num">3</span>
+        <h3>Merge Matching Cookies</h3>
+        <p>When two identical cookies collide during a slide, they merge into a single sweeter cookie worth double the points. Two Classic Cookies become one Chocolate Chip!</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-icon">🆕</span>
+        <span class="step-num">4</span>
+        <h3>New Cookie Appears</h3>
+        <p>After every valid move, a new Classic Cookie or Chocolate Chip appears in a random empty cell. Keep the board from filling up by planning merges ahead.</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-icon">🏆</span>
+        <span class="step-num">5</span>
+        <h3>Reach the Infinity Cookie</h3>
+        <p>Your goal is to merge tiles all the way up to the legendary Infinity Cookie (2048). Unlock it and you can keep playing to discover even rarer cookies beyond!</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-icon">⚠️</span>
+        <span class="step-num">6</span>
+        <h3>Avoid a Full Board</h3>
+        <p>The game ends when the board is completely full and no adjacent tiles can merge. Use the Undo button wisely, and think before every swipe!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 4: COOKIE LADDER
+══════════════════════════════════════════════ -->
+<section id="cookie-ladder">
+  <div class="section-inner">
+    <div class="text-center reveal">
+      <div class="section-tag">🍪 Cookie Tiers</div>
+      <h2 class="section-title">The Complete Cookie Ladder</h2>
+      <p class="section-sub">Every merge promotes your cookie to a sweeter, rarer tier. How far up the ladder can you climb?</p>
+    </div>
+    <div class="ladder-grid reveal">
+      <div class="ladder-card"><span class="lc-emoji">🍪</span><div class="lc-name">Classic Cookie</div><span class="rarity-pill common">Common</span><div class="lc-val">2</div></div>
+      <div class="ladder-card"><span class="lc-emoji">🍫</span><div class="lc-name">Choco Chip</div><span class="rarity-pill common">Common</span><div class="lc-val">4</div></div>
+      <div class="ladder-card"><span class="lc-emoji">⭐</span><div class="lc-name">Sugar Cookie</div><span class="rarity-pill common">Common</span><div class="lc-val">8</div></div>
+      <div class="ladder-card"><span class="lc-emoji">🥜</span><div class="lc-name">Peanut Butter</div><span class="rarity-pill common">Common</span><div class="lc-val">16</div></div>
+      <div class="ladder-card"><span class="lc-emoji">🌾</span><div class="lc-name">Oatmeal Raisin</div><span class="rarity-pill uncommon">Uncommon</span><div class="lc-val">32</div></div>
+      <div class="ladder-card"><span class="lc-emoji">🎄</span><div class="lc-name">Gingerbread</div><span class="rarity-pill uncommon">Uncommon</span><div class="lc-val">64</div></div>
+      <div class="ladder-card"><span class="lc-emoji">🎀</span><div class="lc-name">French Macaron</div><span class="rarity-pill rare">Rare</span><div class="lc-val">128</div></div>
+      <div class="ladder-card"><span class="lc-emoji">🌈</span><div class="lc-name">Rainbow Cookie</div><span class="rarity-pill rare">Rare</span><div class="lc-val">256</div></div>
+      <div class="ladder-card"><span class="lc-emoji">🌋</span><div class="lc-name">Choco Lava</div><span class="rarity-pill rare">Rare</span><div class="lc-val">512</div></div>
+      <div class="ladder-card"><span class="lc-emoji">🦄</span><div class="lc-name">Unicorn Cookie</div><span class="rarity-pill epic">Epic</span><div class="lc-val">1024</div></div>
+      <div class="ladder-card"><span class="lc-emoji">🏆</span><div class="lc-name">Golden Cookie</div><span class="rarity-pill legendary">Legendary</span><div class="lc-val">2048</div></div>
+      <div class="ladder-card"><span class="lc-emoji">🌌</span><div class="lc-name">Galaxy Cookie</div><span class="rarity-pill mythic">Mythic</span><div class="lc-val">4096</div></div>
+      <div class="ladder-card"><span class="lc-emoji">♾️</span><div class="lc-name">Infinity Cookie</div><span class="rarity-pill mythic">Mythic</span><div class="lc-val">8192</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 5: FEATURES
+══════════════════════════════════════════════ -->
+<section id="features">
+  <div class="section-inner">
+    <div class="text-center reveal">
+      <div class="section-tag">⚡ Features</div>
+      <h2 class="section-title">Why 2048 Cookies Stands Out</h2>
+      <p class="section-sub">All the puzzle depth of the original 2048 — now baked with cookies, colours, and a whole lot of sweetness.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="fi-wrap" style="background:linear-gradient(135deg,#FFE0EC,#FFCCE0)">🍪</div><div><h3>13 Cookie Tiers</h3><p>From the humble Classic Cookie to the mythical Infinity Cookie, every merge reveals a sweeter, rarer variety with its own emoji, name, and glowing visual style.</p></div></div>
+      <div class="feature-card reveal"><div class="fi-wrap" style="background:linear-gradient(135deg,#E0F0FF,#CCE4FF)">↩</div><div><h3>Undo Last Move</h3><p>Made a mistake? Use the Undo button to reverse your last swipe. One undo per move keeps the game challenging while giving you a safety net for disaster slides.</p></div></div>
+      <div class="feature-card reveal"><div class="fi-wrap" style="background:linear-gradient(135deg,#E8FFE0,#D4FFCC)">💾</div><div><h3>Auto-Save Progress</h3><p>Your board, score, and best score are saved automatically to local storage. Refresh the page, close the tab — your game is always waiting exactly where you left it.</p></div></div>
+      <div class="feature-card reveal"><div class="fi-wrap" style="background:linear-gradient(135deg,#FFF5E0,#FFEBCC)">📱</div><div><h3>Touch &amp; Swipe Support</h3><p>Full swipe gesture support on phones and tablets. Smooth touch detection means 2048 Cookies plays as naturally on mobile as it does on desktop with a keyboard.</p></div></div>
+      <div class="feature-card reveal"><div class="fi-wrap" style="background:linear-gradient(135deg,#F5E0FF,#EBD0FF)">🎨</div><div><h3>Beautiful Tile Design</h3><p>Each tier has a unique warm-to-vibrant colour gradient, glow effects on legendary tiles, and satisfying merge animations to reward every successful combination.</p></div></div>
+      <div class="feature-card reveal"><div class="fi-wrap" style="background:linear-gradient(135deg,#FFE0E0,#FFD0D0)">🔄</div><div><h3>Keep Going Mode</h3><p>Reached the Golden Cookie (2048)? You can choose to keep playing and push your score even further, unlocking the rare Galaxy Cookie and Infinity Cookie tiles.</p></div></div>
+      <div class="feature-card reveal"><div class="fi-wrap" style="background:linear-gradient(135deg,#E0FFF5,#CCFFF0)">📋</div><div><h3>Cookie Progress Tracker</h3><p>The sidebar tracks every cookie tier you've ever unlocked. Locked tiers show as mystery entries to fuel your collector's drive to keep merging.</p></div></div>
+      <div class="feature-card reveal"><div class="fi-wrap" style="background:linear-gradient(135deg,#FFFBE0,#FFF5C0)">📊</div><div><h3>Session Statistics</h3><p>Track your total merges, moves, games played, and all-time best score in the live stats panel. Challenge yourself to beat your own records every session.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 6: STRATEGY TIPS
+══════════════════════════════════════════════ -->
+<section id="strategy">
+  <div class="section-inner">
+    <div class="text-center reveal">
+      <div class="section-tag">🧠 Pro Tips</div>
+      <h2 class="section-title">Strategy Guide for 2048 Cookies</h2>
+      <p class="section-sub">The puzzle is simple to start but fiendishly difficult to master. These proven strategies will dramatically boost your scores.</p>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card reveal">
+        <span class="tip-num">1</span>
+        <h4>Pick a Corner and Stay There</h4>
+        <p>The most reliable 2048 strategy is to anchor your highest-value cookie in one corner and never move it. Slide primarily in two directions (e.g. down and right) to build a descending chain toward that corner without disturbing your biggest tile.</p>
+      </div>
+      <div class="tip-card reveal">
+        <span class="tip-num">2</span>
+        <h4>Build a Snake Pattern</h4>
+        <p>Fill rows in a snaking order — highest values in the bottom row from left to right, then the next row from right to left, and so on upward. This cascading layout sets up chain merges that can clear multiple tiers in one sweep.</p>
+      </div>
+      <div class="tip-card reveal">
+        <span class="tip-num">3</span>
+        <h4>Avoid Moving Your Anchor Direction</h4>
+        <p>If your biggest cookie is in the bottom-right corner, avoid pressing Up whenever possible. A single upward swipe at the wrong moment can knock your prized Unicorn Cookie away from the corner and break your entire chain.</p>
+      </div>
+      <div class="tip-card reveal">
+        <span class="tip-num">4</span>
+        <h4>Keep the Bottom Row Full</h4>
+        <p>Aim to keep the entire bottom row filled with a descending sequence of tiles. This prevents the anchor tile from moving while giving you room to build the next tier in the rows above, ready for the merge sweep.</p>
+      </div>
+      <div class="tip-card reveal">
+        <span class="tip-num">5</span>
+        <h4>Don't Rush — Plan Two Moves Ahead</h4>
+        <p>2048 Cookies rewards deliberate thinking. Before swiping, mentally trace where every tile will land and whether the resulting layout gives you a clear path to more merges. Panic swiping fills the board with mismatched tiles quickly.</p>
+      </div>
+      <div class="tip-card reveal">
+        <span class="tip-num">6</span>
+        <h4>Save the Undo for Critical Moments</h4>
+        <p>The undo button is your emergency brake — don't use it on small mistakes. Save it for the moment you accidentally slide your biggest tile out of its corner, or create an unrecoverable split that would end your game.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 7: ABOUT
+══════════════════════════════════════════════ -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <h2>About 2048 Cookies</h2>
+        <p>2048 Cookies is a delightfully sweet reimagining of the classic 2048 sliding puzzle game created by Gabriele Cirulli in 2014. Instead of abstract numbers, every tile is a cookie — from a plain Classic Cookie all the way up to the mythical Infinity Cookie — making every merge feel like a genuine baking achievement.</p>
+        <p>The game runs entirely in your browser with no plugins, downloads, or accounts required. It uses pure HTML, CSS, and JavaScript for lightning-fast performance on any device. Whether you're on a phone, tablet, or desktop, the game adapts perfectly to your screen size with full touch-swipe support.</p>
+        <p>2048 Cookies is part of the <a href="index.html" style="color:var(--candy-pink);font-weight:700;">www.clickcookies.com</a> family — a growing suite of free, ad-supported browser cookie games designed to bring a little sweetness to your day. Auto-save means you never lose progress, and the Keep Going mode means there's always a more legendary cookie to chase.</p>
+        <div class="badge-row">
+          <span class="badge">🎮 Browser Game</span>
+          <span class="badge">📱 Mobile Ready</span>
+          <span class="badge">💾 Auto-Saves</span>
+          <span class="badge">🆓 100% Free</span>
+          <span class="badge">🚫 No Download</span>
+          <span class="badge">⌨️ Keyboard Support</span>
+        </div>
+      </div>
+      <div class="about-visual reveal">
+        <div class="about-tiles">
+          <div class="at" style="background:#FDEBD0">🍪</div>
+          <div class="at" style="background:#FAD7A0">🍫</div>
+          <div class="at" style="background:#F5A882">⭐</div>
+          <div class="at" style="background:#F1926A">🥜</div>
+          <div class="at" style="background:#E8845A">🌾</div>
+          <div class="at" style="background:linear-gradient(135deg,#F472B6,#EC4899)">🎀</div>
+          <div class="at" style="background:linear-gradient(135deg,#C084FC,#A855F7)">🌈</div>
+          <div class="at" style="background:linear-gradient(135deg,#60A5FA,#3B82F6)">🌋</div>
+          <div class="at" style="background:linear-gradient(135deg,#34D399,#059669)">🦄</div>
+          <div class="at" style="background:linear-gradient(135deg,#FCD34D,#F59E0B);box-shadow:0 0 14px rgba(245,158,11,.5)">🏆</div>
+          <div class="at" style="background:linear-gradient(135deg,#FF6B9D,#A855F7,#3B82F6);box-shadow:0 0 16px rgba(168,85,247,.5)">🌌</div>
+          <div class="at" style="background:linear-gradient(135deg,#000,#1a0533);box-shadow:0 0 18px #a855f7">♾️</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 8: FAQ
+══════════════════════════════════════════════ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="text-center reveal">
+      <div class="section-tag">❓ FAQ</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub">Everything you need to know about 2048 Cookies, fresh from the oven.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-q">How do I play 2048 Cookies? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Use arrow keys, WASD keys, swipe gestures, or the on-screen d-pad to slide all cookie tiles in one direction. When two identical cookies collide, they merge into the next rarity tier. A new cookie spawns after every move. The goal is to merge cookies all the way up to the Golden Cookie (2048) and beyond.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is the highest cookie tile in the game? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">The standard victory condition is the Golden Cookie (2048). However, if you choose to keep playing after winning, you can continue merging to unlock the Galaxy Cookie (4096) and the ultimate Infinity Cookie (8192). The board supports tiles even beyond that in endless play.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does 2048 Cookies save my progress automatically? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Yes! Every move is saved to your browser's local storage. If you close the tab, refresh the page, or your battery dies, your exact board position, score, and best score are all preserved and restored the next time you open the game.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How does the Undo button work? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Clicking Undo reverts the board to the state it was in before your last move — including the score and tile positions. You get one undo per move, so you can't undo multiple moves in a row. Use it strategically when a swipe sends your highest tile to a bad position.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What happens when I reach the Golden Cookie (2048)? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">A victory screen appears congratulating you. You can then choose "Keep Going" to continue playing and chase even higher cookie tiers like the Galaxy Cookie and Infinity Cookie, or start a fresh New Game. Your best score is always tracked regardless of which option you pick.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is 2048 Cookies free, and do I need an account? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Completely free, no account needed! Just visit the page and start playing. No downloads, no emails, no passwords. Your progress saves automatically to your browser so everything is ready whenever you return.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I play 2048 Cookies on my phone? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Absolutely. The game is fully optimised for touchscreens with swipe gesture support. Swipe up, down, left, or right on the board to move tiles, or use the on-screen d-pad buttons. The grid and all UI elements automatically resize for mobile displays.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What's the best strategy for reaching the Golden Cookie? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">The classic "corner strategy" is most reliable: pick one corner (e.g. bottom-right) and always keep your highest tile there. Slide mostly in two directions toward that corner and try to maintain a descending tile sequence along the bottom row. Never move the highest tile away from its corner unless absolutely necessary.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CTA BANNER
+══════════════════════════════════════════════ -->
+<section id="cta">
+  <h2>Ready to Bake the Infinity Cookie?</h2>
+  <p>Every slide brings you one merge closer. Start your sweetest puzzle yet!</p>
+  <button class="btn-cta-big" onclick="scrollToGame()">🍪 Play 2048 Cookies — Free!</button>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+        <span class="logo-icon" style="animation:none">🍪</span>
+        <span class="logo-text">Click<span class="logo-accent">Cookies</span></span>
+      </a>
+      <p class="footer-tagline">The sweetest collection of free cookie games on the internet. Click, slide, merge, and bake your way to cookie legend status!</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Twitter" class="social-icon">𝕏</a>
+        <a href="#" aria-label="Discord" class="social-icon">💬</a>
+        <a href="#" aria-label="YouTube" class="social-icon">▶</a>
+        <a href="#" aria-label="Reddit"  class="social-icon">🔴</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Games</h4>
+        <ul>
+          <li><a href="index.html">Click Cookies</a></li>
+          <li><a href="2048">2048 Cookies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>2048 Cookies</h4>
+        <ul>
+          <li><a href="#game">Play Now</a></li>
+          <li><a href="#how-to-play">How to Play</a></li>
+          <li><a href="#cookie-ladder">Cookie Ladder</a></li>
+          <li><a href="#strategy">Strategy Guide</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="footer-year"></span> www.clickcookies.com — All rights reserved.</p>
+    <p>Made with 🍪 and lots of sugar</p>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════
+     GAME ENGINE
+══════════════════════════════════════════════ -->
+<script>
+const G = (function () {
+
+  /* ── Cookie tile definitions (power-of-2 → cookie) ── */
+  const COOKIES = {
+    2:    { emoji:'🍪', name:'Classic',    cls:'t-2',    rarity:'common'    },
+    4:    { emoji:'🍫', name:'Choco Chip', cls:'t-4',    rarity:'common'    },
+    8:    { emoji:'⭐', name:'Sugar',      cls:'t-8',    rarity:'common'    },
+    16:   { emoji:'🥜', name:'Peanut Btn', cls:'t-16',   rarity:'common'    },
+    32:   { emoji:'🌾', name:'Oatmeal',    cls:'t-32',   rarity:'uncommon'  },
+    64:   { emoji:'🎄', name:'Gingerbrd',  cls:'t-64',   rarity:'uncommon'  },
+    128:  { emoji:'🎀', name:'Macaron',    cls:'t-128',  rarity:'rare'      },
+    256:  { emoji:'🌈', name:'Rainbow',    cls:'t-256',  rarity:'rare'      },
+    512:  { emoji:'🌋', name:'Choco Lava', cls:'t-512',  rarity:'rare'      },
+    1024: { emoji:'🦄', name:'Unicorn',    cls:'t-1024', rarity:'epic'      },
+    2048: { emoji:'🏆', name:'Golden',     cls:'t-2048', rarity:'legendary' },
+    4096: { emoji:'🌌', name:'Galaxy',     cls:'t-4096', rarity:'mythic'    },
+    8192: { emoji:'♾️', name:'Infinity',   cls:'t-8192', rarity:'mythic'    },
+  };
+
+  const ALL_VALS = Object.keys(COOKIES).map(Number);
+
+  /* ── State ── */
+  let grid      = [];     // 4×4 array of values (0 = empty)
+  let score     = 0;
+  let bestScore = 0;
+  let moves     = 0;
+  let merges    = 0;
+  let gamesPlayed = 0;
+  let prevGrid  = null;
+  let prevScore = 0;
+  let prevMerges= 0;
+  let prevMoves = 0;
+  let won       = false;
+  let keepGoing = false;
+  let highestEver = 0;  // across all games
+  let unlockedTiers = new Set();
+
+  const board = document.getElementById('game-board');
+
+  /* ── Initialise ── */
+  function init() {
+    loadStats();
+    if (!loadGame()) newGame();
+    renderProgress();
+    updateStatsPanel();
+    setupInput();
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  }
+
+  /* ── New Game ── */
+  function newGame() {
+    gamesPlayed++;
+    grid  = Array.from({length:4}, () => Array(4).fill(0));
+    score = 0; moves = 0; merges = 0;
+    won = false; keepGoing = false;
+    prevGrid = null;
+    addRandom(); addRandom();
+    hideOverlay();
+    renderBoard();
+    updateScoreUI();
+    updateStatsPanel();
+    saveGame(); saveStats();
+    document.getElementById('btn-undo').disabled = true;
+  }
+
+  /* ── Add random tile (90% = 2, 10% = 4) ── */
+  function addRandom() {
+    const empties = [];
+    for (let r=0;r<4;r++) for (let c=0;c<4;c++) if (!grid[r][c]) empties.push([r,c]);
+    if (!empties.length) return false;
+    const [r,c] = empties[Math.floor(Math.random()*empties.length)];
+    grid[r][c] = Math.random() < 0.9 ? 2 : 4;
+    return true;
+  }
+
+  /* ── Move logic ── */
+  function move(dir) {
+    // Save undo state
+    prevGrid   = grid.map(r => [...r]);
+    prevScore  = score;
+    prevMerges = merges;
+    prevMoves  = moves;
+
+    let moved = false;
+    const newMergeVals = [];
+
+    if (dir === 'left' || dir === 'right') {
+      for (let r=0;r<4;r++) {
+        const { row, gained, changed, merged } = slideRow(grid[r], dir === 'right');
+        if (changed) moved = true;
+        grid[r] = row;
+        score += gained;
+        newMergeVals.push(...merged);
+      }
+    } else {
+      for (let c=0;c<4;c++) {
+        const col = [grid[0][c], grid[1][c], grid[2][c], grid[3][c]];
+        const { row, gained, changed, merged } = slideRow(col, dir === 'down');
+        if (changed) moved = true;
+        for (let r=0;r<4;r++) grid[r][c] = row[r];
+        score += gained;
+        newMergeVals.push(...merged);
+      }
+    }
+
+    if (!moved) return;
+
+    moves++;
+    merges += newMergeVals.length;
+    if (score > bestScore) bestScore = score;
+
+    // Track unlocked tiers
+    newMergeVals.forEach(v => {
+      unlockedTiers.add(v);
+      if (v > highestEver) highestEver = v;
+    });
+    // Also track starting tiles
+    for (let r=0;r<4;r++) for (let c=0;c<4;c++) {
+      const v = grid[r][c];
+      if (v) unlockedTiers.add(v);
+    }
+
+    addRandom();
+    renderBoard(newMergeVals);
+    updateScoreUI();
+    renderProgress();
+    updateStatsPanel();
+    saveGame(); saveStats();
+
+    document.getElementById('btn-undo').disabled = false;
+
+    // Check win
+    if (!won && !keepGoing) {
+      for (let r=0;r<4;r++) for (let c=0;c<4;c++) {
+        if (grid[r][c] >= 2048) { won = true; showWin(); return; }
+      }
+    }
+    // Check lose
+    if (!canMove()) showLose();
+  }
+
+  function slideRow(row, reverse) {
+    if (reverse) row = [...row].reverse();
+    // Compact
+    let arr = row.filter(x => x);
+    const gained  = [];
+    const merged  = [];
+    for (let i=0;i<arr.length-1;i++) {
+      if (arr[i] === arr[i+1]) {
+        arr[i] *= 2;
+        gained.push(arr[i]);
+        merged.push(arr[i]);
+        arr.splice(i+1,1);
+      }
+    }
+    while (arr.length < 4) arr.push(0);
+    const changed = arr.some((v,i) => v !== (reverse ? [...row].reverse()[i] : row[i]));
+    if (reverse) arr.reverse();
+    return { row: arr, gained: gained.reduce((a,b)=>a+b,0), changed, merged };
+  }
+
+  function canMove() {
+    for (let r=0;r<4;r++) for (let c=0;c<4;c++) {
+      if (!grid[r][c]) return true;
+      if (c<3 && grid[r][c]===grid[r][c+1]) return true;
+      if (r<3 && grid[r][c]===grid[r+1][c]) return true;
+    }
+    return false;
+  }
+
+  /* ── Undo ── */
+  function undo() {
+    if (!prevGrid) return;
+    grid   = prevGrid.map(r => [...r]);
+    score  = prevScore;
+    merges = prevMerges;
+    moves  = prevMoves;
+    prevGrid = null;
+    renderBoard();
+    updateScoreUI();
+    updateStatsPanel();
+    saveGame();
+    document.getElementById('btn-undo').disabled = true;
+  }
+
+  /* ── Keep Going ── */
+  function keepGoingFn() {
+    keepGoing = true;
+    hideOverlay();
+  }
+
+  /* ── Render Board ── */
+  function renderBoard(newMergeVals = []) {
+    // Remove old tiles
+    board.querySelectorAll('.tile').forEach(t => t.remove());
+
+    const gap  = 10;
+    const cell = getCellSize();
+
+    for (let r=0;r<4;r++) {
+      for (let c=0;c<4;c++) {
+        const v = grid[r][c];
+        if (!v) continue;
+        const ck = COOKIES[v] || { emoji:'🌟', name:'Beyond', cls:'t-8192', rarity:'mythic' };
+        const tile = document.createElement('div');
+        tile.className = 'tile ' + ck.cls + (newMergeVals.includes(v) ? ' merged' : '');
+        tile.style.top  = (gap + r*(cell+gap)) + 'px';
+        tile.style.left = (gap + c*(cell+gap)) + 'px';
+        tile.innerHTML = `
+          <span class="tile-emoji">${ck.emoji}</span>
+          <span class="tile-name">${ck.name}</span>
+          <span class="tile-val">${v}</span>`;
+        board.appendChild(tile);
+      }
+    }
+  }
+
+  function getCellSize() {
+    const boardW = board.getBoundingClientRect().width;
+    const gap = 10;
+    return (boardW - gap * 5) / 4;
+  }
+
+  /* ── Score UI ── */
+  function updateScoreUI() {
+    const scoreEl = document.getElementById('score-display');
+    const bestEl  = document.getElementById('best-display');
+    const movesEl = document.getElementById('moves-display');
+    const highEl  = document.getElementById('highest-display');
+
+    // Score add animation
+    const prev = parseInt(scoreEl.dataset.prev || '0');
+    const diff = score - prev;
+    if (diff > 0) {
+      const rect = scoreEl.getBoundingClientRect();
+      const anim = document.createElement('div');
+      anim.className = 'score-add';
+      anim.textContent = '+' + diff;
+      anim.style.left = rect.left + 'px';
+      anim.style.top  = rect.top + 'px';
+      document.body.appendChild(anim);
+      setTimeout(() => anim.remove(), 900);
+    }
+    scoreEl.textContent = score;
+    scoreEl.dataset.prev = score;
+    bestEl.textContent  = bestScore;
+    movesEl.textContent = moves;
+
+    // Highest tile emoji
+    let maxVal = 0;
+    for (let r=0;r<4;r++) for (let c=0;c<4;c++) if (grid[r][c] > maxVal) maxVal = grid[r][c];
+    if (maxVal && COOKIES[maxVal]) highEl.textContent = COOKIES[maxVal].emoji;
+    else if (maxVal) highEl.textContent = '🌟';
+  }
+
+  /* ── Progress Tracker ── */
+  function renderProgress() {
+    const list = document.getElementById('progress-list');
+    if (!list) return;
+
+    // Collect max value on board
+    let maxOnBoard = 0;
+    for (let r=0;r<4;r++) for (let c=0;c<4;c++) if (grid[r][c] > maxOnBoard) maxOnBoard = grid[r][c];
+
+    list.innerHTML = ALL_VALS.map(v => {
+      const ck = COOKIES[v];
+      const unlocked = unlockedTiers.has(v);
+      const isCurrent = v === maxOnBoard;
+      let cls = 'progress-item';
+      if (unlocked) cls += ' unlocked';
+      if (isCurrent) cls += ' current';
+      return `<div class="${cls}">
+        <span class="pi-emoji">${unlocked ? ck.emoji : '❓'}</span>
+        <div class="pi-info">
+          <div class="pi-name">${unlocked ? ck.name : '???'}</div>
+          <div class="pi-val">${unlocked ? v : 'Locked'}</div>
+        </div>
+        ${unlocked ? '' : '<span class="pi-lock">🔒</span>'}
+      </div>`;
+    }).join('');
+  }
+
+  /* ── Stats Panel ── */
+  function updateStatsPanel() {
+    const el = id => document.getElementById(id);
+    el('stat-merges').textContent = merges;
+    el('stat-moves').textContent  = moves;
+    el('stat-best').textContent   = bestScore;
+    el('stat-games').textContent  = gamesPlayed;
+  }
+
+  /* ── Overlays ── */
+  function showWin() {
+    const overlay = document.getElementById('board-overlay');
+    overlay.className = 'board-overlay win';
+    document.getElementById('overlay-emoji').textContent = '🏆';
+    document.getElementById('overlay-title').textContent = 'You Win!';
+    document.getElementById('overlay-msg').textContent   = 'You baked the legendary Golden Cookie!';
+    document.getElementById('btn-keep-going').style.display = 'inline-flex';
+
+    const toast = document.getElementById('win-toast');
+    toast.textContent = '🏆 Golden Cookie Unlocked!';
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3500);
+  }
+
+  function showLose() {
+    const overlay = document.getElementById('board-overlay');
+    overlay.className = 'board-overlay lose';
+    document.getElementById('overlay-emoji').textContent = '😢';
+    document.getElementById('overlay-title').textContent = 'Game Over!';
+    document.getElementById('overlay-msg').textContent   = `Score: ${score} — Try again!`;
+    document.getElementById('btn-keep-going').style.display = 'none';
+  }
+
+  function hideOverlay() {
+    document.getElementById('board-overlay').className = 'board-overlay hidden';
+  }
+
+  /* ── Input ── */
+  function setupInput() {
+    // Keyboard
+    document.addEventListener('keydown', e => {
+      const map = { ArrowUp:'up', ArrowDown:'down', ArrowLeft:'left', ArrowRight:'right',
+                    w:'up', s:'down', a:'left', d:'right',
+                    W:'up', S:'down', A:'left', D:'right' };
+      if (map[e.key]) { e.preventDefault(); move(map[e.key]); }
+    });
+
+    // Touch swipe
+    let tx = 0, ty = 0;
+    board.addEventListener('touchstart', e => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, {passive:true});
+    board.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - tx;
+      const dy = e.changedTouches[0].clientY - ty;
+      if (Math.max(Math.abs(dx),Math.abs(dy)) < 20) return;
+      if (Math.abs(dx) > Math.abs(dy)) move(dx > 0 ? 'right' : 'left');
+      else                              move(dy > 0 ? 'down'  : 'up');
+    }, {passive:true});
+  }
+
+  /* ── Persist ── */
+  function saveGame() {
+    try {
+      localStorage.setItem('cc2048_game', JSON.stringify({ grid, score, moves, merges, won, keepGoing, unlockedTiers:[...unlockedTiers] }));
+    } catch(e){}
+  }
+  function loadGame() {
+    try {
+      const d = JSON.parse(localStorage.getItem('cc2048_game') || 'null');
+      if (!d) return false;
+      grid   = d.grid;
+      score  = d.score || 0;
+      moves  = d.moves || 0;
+      merges = d.merges || 0;
+      won    = d.won || false;
+      keepGoing = d.keepGoing || false;
+      unlockedTiers = new Set(d.unlockedTiers || []);
+      if (score > bestScore) bestScore = score;
+      renderBoard();
+      updateScoreUI();
+      renderProgress();
+      return true;
+    } catch(e) { return false; }
+  }
+  function saveStats() {
+    try { localStorage.setItem('cc2048_stats', JSON.stringify({ bestScore, gamesPlayed, highestEver, unlockedTiers:[...unlockedTiers] })); } catch(e){}
+  }
+  function loadStats() {
+    try {
+      const d = JSON.parse(localStorage.getItem('cc2048_stats') || 'null');
+      if (!d) return;
+      bestScore   = d.bestScore   || 0;
+      gamesPlayed = d.gamesPlayed || 0;
+      highestEver = d.highestEver || 0;
+      unlockedTiers = new Set(d.unlockedTiers || []);
+    } catch(e){}
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+
+  return { newGame, move, undo, keepGoing: keepGoingFn };
+})();
+
+/* ── UI helpers ── */
+function scrollToGame() {
+  document.getElementById('game').scrollIntoView({behavior:'smooth'});
+}
+
+/* ── Header scroll ── */
+window.addEventListener('scroll', () => {
+  document.getElementById('site-header')?.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+/* ── Hamburger ── */
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const nav       = document.getElementById('header-nav');
+  hamburger?.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    hamburger.classList.toggle('active');
+  });
+  // Smooth nav links
+  document.querySelectorAll('.nav-link[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+      nav.classList.remove('open');
+      hamburger.classList.remove('active');
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q')?.addEventListener('click', () => {
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!open) item.classList.add('open');
+    });
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const siblings = Array.from(entry.target.parentElement?.children || [entry.target]);
+        const idx = siblings.indexOf(entry.target);
+        setTimeout(() => entry.target.classList.add('visible'), idx * 70);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:.1, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Anchor from URL hash
+  if (window.location.hash) {
+    setTimeout(() => document.querySelector(window.location.hash)?.scrollIntoView({behavior:'smooth'}), 400);
+  }
+
+  // Footer year (backup)
+  const fy = document.getElementById('footer-year');
+  if (fy && !fy.textContent) fy.textContent = new Date().getFullYear();
+});
+</script>
+
+</body>
+</html>
