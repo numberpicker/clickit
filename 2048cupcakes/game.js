@@ -20,17 +20,17 @@
    ============================================================ */
 
 const CUPCAKE_IMAGES = {
-  2:    '2.png',   // e.g. 'cupcake_02.png'
-  4:    '4.png',
-  8:    '8.png',
-  16:   '16.png',
-  32:   '32.png',
-  64:   '64.png',
-  128:  '128.png',
-  256:  '256.png',
-  512:  '512.png',
-  1024: '1024.png',
-  2048: '2048.png',
+  2:    '/2048cupcakes/2.png',   // e.g. 'cupcake_02.png'
+  4:    '/2048cupcakes/4.png',
+  8:    '/2048cupcakes/8.png',
+  16:   '/2048cupcakes/16.png',
+  32:   '/2048cupcakes/32.png',
+  64:   '/2048cupcakes/64.png',
+  128:  '/2048cupcakes/128.png',
+  256:  '/2048cupcakes/256.png',
+  512:  '/2048cupcakes/512.png',
+  1024: '/2048cupcakes/1024.png',
+  2048: '/2048cupcakes/2048.png',
 };
 
 /* ── Constants ──────────────────────────────────────────────── */
