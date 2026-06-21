@@ -43,25 +43,31 @@ html, body {
   margin: 0 auto;
   padding: 28px 16px 40px;
   position: relative;
-}
-
-/* ── Header ───────────────────────────────────────────────── */
-.header {
-  display: flex;
-  flex-direction: column;   /* Stacks everything in a unified vertical layout */
-  align-items: center;      /* Centers all child items horizontally */
-  text-align: center;
-  gap: 14px;
-  margin-bottom: 24px;
-  width: 100%;
-}
-
-.header-left, .header-right {
   display: flex;
   flex-direction: column;
-  align-items: center;      /* Bypasses old side-by-side split parameters */
-  text-align: center;
-  width: 100%;
+  align-items: center;      /* Enforces absolute horizontal centering for everything */
+}
+
+/* ── Header Layout Centering Overrides ─────────────────────── */
+.header {
+  display: flex !important;
+  flex-direction: column !important; /* Stacks title, subtitle, scores, and buttons vertically */
+  align-items: center !important;    /* Forces everything to align to center axis */
+  justify-content: center !important;
+  text-align: center !important;
+  gap: 14px;
+  margin-bottom: 24px;
+  width: 100% !important;
+  float: none !important;            /* Neutralizes any outer layout floats */
+}
+
+/* Clean up remnants of older layout parameters */
+.header-left, .header-right {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
   gap: 12px;
 }
 
@@ -100,10 +106,11 @@ html, body {
 
 /* ── Score Group ─────────────────────────────────────────── */
 .score-group {
-  display: flex;
-  justify-content: center;
+  display: flex !important;
+  justify-content: center !important;
   gap: 8px;
-  width: 100%;
+  width: auto !important;
+  margin: 0 auto;
 }
 
 .score-box {
@@ -133,12 +140,12 @@ html, body {
   line-height: 1.1;
 }
 
-/* ── Buttons ──────────────────────────────────────────────── */
+/* ── Game Options & Buttons (Perfect Centering) ───────────── */
 .btn-row {
-  display: flex;
-  justify-content: center;  /* Forces options and buttons directly to the middle */
+  display: flex !important;
+  justify-content: center !important; /* Centers options buttons cleanly over board */
   gap: 12px;
-  width: 100%;
+  width: 100% !important;
   margin-top: 4px;
 }
 
@@ -171,9 +178,9 @@ html, body {
 
 /* ── Board ────────────────────────────────────────────────── */
 .board-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
 }
 
 .board {
@@ -300,6 +307,10 @@ html, body {
   font-size: 0.82rem;
   color: var(--text-mid);
   line-height: 1.6;
+  width: 100%;
+  max-width: calc(4 * var(--cell) + 5 * var(--gap));
+  margin-left: auto;
+  margin-right: auto;
 }
 .how-to-play strong { color: var(--raspberry); }
 kbd {
