@@ -15,7 +15,7 @@
           <li><a href="/#how-to-play" class="nav-link">How to Play</a></li>
           <li><a href="/#cookie-types" class="nav-link">Cookie Types</a></li>
           <li><a href="/#upgrades" class="nav-link">Upgrades</a></li>
-          <li><a href="/#leaderboard" class="nav-link">Leaderboard</a></li>
+          <li><a href="/2048-cupcakes" class="nav-link">CupCakes</a></li>
           <li><a href="/2048-cookies" class="nav-link">2048</a></li>
           <li><a href="/#faq" class="nav-link">FAQ</a></li>
         </ul>
