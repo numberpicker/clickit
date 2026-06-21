@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cupcakes 2048</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <h1 class="game-title">
+          <span class="title-cupcake">🧁</span>
+          Cupcakes <em>2048</em>
+        </h1>
+        <p class="subtitle">Merge the cupcakes — reach the legendary tier!</p>
+      </div>
+      <div class="header-right">
+        <div class="score-group">
+          <div class="score-box" id="score-box">
+            <span class="score-label">Score</span>
+            <span class="score-value" id="score">0</span>
+          </div>
+          <div class="score-box" id="best-box">
+            <span class="score-label">Best</span>
+            <span class="score-value" id="best">0</span>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-new" id="new-game-btn">New Game</button>
+          <button class="btn btn-undo" id="undo-btn">Undo</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- GAME BOARD -->
+    <main class="board-wrapper">
+      <div class="board" id="board">
+        <!-- 16 cells rendered by JS -->
+        <div class="grid-cells" id="grid-cells"></div>
+        <div class="tile-layer" id="tile-layer"></div>
+      </div>
+    </main>
+
+    <!-- HOW TO PLAY -->
+    <section class="how-to-play">
+      <p>
+        <strong>How to play:</strong> Use <kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> or swipe to slide tiles.
+        Matching cupcakes merge into the next tier. Reach the <strong>🧁 2048</strong> cupcake to win!
+      </p>
+    </section>
+
+    <!-- WIN / LOSE OVERLAYS -->
+    <div class="overlay" id="overlay-win" hidden>
+      <div class="overlay-box">
+        <div class="overlay-icon">🎉</div>
+        <h2>You did it!</h2>
+        <p>You baked the legendary <strong>2048 Cupcake</strong>!</p>
+        <button class="btn btn-new" id="keep-going-btn">Keep Going</button>
+        <button class="btn btn-undo" id="new-after-win-btn">New Game</button>
+      </div>
+    </div>
+    <div class="overlay" id="overlay-lose" hidden>
+      <div class="overlay-box">
+        <div class="overlay-icon">😢</div>
+        <h2>No more moves!</h2>
+        <p>The frosting has set. Try again?</p>
+        <button class="btn btn-new" id="new-after-lose-btn">New Game</button>
+      </div>
+    </div>
+
+  </div><!-- /.page-wrapper -->
+
+  <script src="game.js"></script>
+</body>
+</html>
