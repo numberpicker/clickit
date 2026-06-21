@@ -20,7 +20,7 @@
    ============================================================ */
 
 const CUPCAKE_IMAGES = {
-  2:    '/2048cupcakes/2.jpg',   // e.g. 'cupcake_02.png'
+  2:    '/2048cupcakes/2.webp',   // e.g. 'cupcake_02.png'
   4:    '/2048cupcakes/4.jpg',
   8:    '/2048cupcakes/8.jpg',
   16:   '/2048cupcakes/16.jpg',
