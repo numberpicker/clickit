@@ -48,11 +48,21 @@ html, body {
 /* ── Header ───────────────────────────────────────────────── */
 .header {
   display: flex;
-  flex-direction: column;   /* Stacks title, scores, and buttons vertically */
-  align-items: center;      /* Centers all child elements horizontally */
+  flex-direction: column;   /* Stacks everything in a unified vertical layout */
+  align-items: center;      /* Centers all child items horizontally */
   text-align: center;
-  gap: 16px;
+  gap: 14px;
   margin-bottom: 24px;
+  width: 100%;
+}
+
+.header-left, .header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* Bypasses old side-by-side split parameters */
+  text-align: center;
+  width: 100%;
+  gap: 12px;
 }
 
 .game-title {
@@ -63,7 +73,7 @@ html, body {
   letter-spacing: -0.5px;
   display: flex;
   align-items: center;
-  justify-content: center;  /* Centers title components */
+  justify-content: center;
   gap: 10px;
 }
 .game-title em {
@@ -82,25 +92,18 @@ html, body {
 
 .subtitle {
   margin-top: 4px;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: var(--text-mid);
   font-weight: 600;
   letter-spacing: 0.02em;
 }
 
-/* ── Score & Options Area ─────────────────────────────────── */
-.header-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;      /* Direct centering alignment above board */
-  gap: 12px;
-  width: 100%;
-}
-
+/* ── Score Group ─────────────────────────────────────────── */
 .score-group {
   display: flex;
   justify-content: center;
   gap: 8px;
+  width: 100%;
 }
 
 .score-box {
@@ -109,7 +112,7 @@ html, body {
   border-radius: 12px;
   padding: 8px 18px;
   text-align: center;
-  min-width: 72px;
+  min-width: 76px;
   box-shadow: 0 3px 10px rgba(232,99,140,0.35);
 }
 .score-box#best-box {
@@ -133,18 +136,19 @@ html, body {
 /* ── Buttons ──────────────────────────────────────────────── */
 .btn-row {
   display: flex;
-  justify-content: center;  /* Centers option buttons cleanly */
+  justify-content: center;  /* Forces options and buttons directly to the middle */
   gap: 12px;
   width: 100%;
+  margin-top: 4px;
 }
 
 .btn {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   border: none;
   border-radius: 10px;
-  padding: 10px 22px;
+  padding: 10px 24px;
   cursor: pointer;
   transition: transform var(--transition), box-shadow var(--transition);
   letter-spacing: 0.04em;
@@ -169,6 +173,7 @@ html, body {
 .board-wrapper {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .board {
