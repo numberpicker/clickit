@@ -48,8 +48,9 @@ html, body {
 /* ── Header ───────────────────────────────────────────────── */
 .header {
   display: flex;
-  flex-direction: column;      /* ← FIXED: stack vertically */
-  align-items: stretch;        /* ← FIXED: full width */
+  flex-direction: column;   /* Stacks title, scores, and buttons vertically */
+  align-items: center;      /* Centers all child elements horizontally */
+  text-align: center;
   gap: 16px;
   margin-bottom: 24px;
 }
@@ -62,6 +63,7 @@ html, body {
   letter-spacing: -0.5px;
   display: flex;
   align-items: center;
+  justify-content: center;  /* Centers title components */
   gap: 10px;
 }
 .game-title em {
@@ -86,20 +88,19 @@ html, body {
   letter-spacing: 0.02em;
 }
 
-/* ── Score boxes ──────────────────────────────────────────── */
+/* ── Score & Options Area ─────────────────────────────────── */
 .header-right {
   display: flex;
-  flex-direction: row;         /* ← FIXED: keep horizontal */
-  align-items: center;
-  justify-content: space-between; /* ← FIXED: spread items */
-  gap: 10px;
-  width: 100%;                 /* ← FIXED: full width */
+  flex-direction: column;
+  align-items: center;      /* Direct centering alignment above board */
+  gap: 12px;
+  width: 100%;
 }
 
 .score-group {
   display: flex;
+  justify-content: center;
   gap: 8px;
-  flex-shrink: 0;              /* ← FIXED: prevent squishing */
 }
 
 .score-box {
@@ -132,17 +133,18 @@ html, body {
 /* ── Buttons ──────────────────────────────────────────────── */
 .btn-row {
   display: flex;
-  gap: 8px;
-  flex-shrink: 0;              /* ← FIXED: prevent squishing */
+  justify-content: center;  /* Centers option buttons cleanly */
+  gap: 12px;
+  width: 100%;
 }
 
 .btn {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   border: none;
   border-radius: 10px;
-  padding: 9px 18px;
+  padding: 10px 22px;
   cursor: pointer;
   transition: transform var(--transition), box-shadow var(--transition);
   letter-spacing: 0.04em;
@@ -357,20 +359,6 @@ kbd {
   .game-title   { font-size: 2rem; }
   .score-value  { font-size: 1.2rem; }
   .board-wrapper { overflow-x: auto; }
-  
-  /* ← FIXED: stack buttons below scores on small screens */
-  .header-right {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .score-group {
-    width: 100%;
-    justify-content: center;
-  }
-  .btn-row {
-    width: 100%;
-    justify-content: center;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
