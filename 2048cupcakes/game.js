@@ -21,16 +21,16 @@
 
 const CUPCAKE_IMAGES = {
   2:    '/2048cupcakes/2.webp',   // e.g. 'cupcake_02.png'
-  4:    '/2048cupcakes/4.jpg',
-  8:    '/2048cupcakes/8.jpg',
-  16:   '/2048cupcakes/16.jpg',
-  32:   '/2048cupcakes/32.jpg',
-  64:   '/2048cupcakes/64.jpg',
-  128:  '/2048cupcakes/128.jpg',
-  256:  '/2048cupcakes/256.jpg',
-  512:  '/2048cupcakes/512.jpg',
-  1024: '/2048cupcakes/1024.jpg',
-  2048: '/2048cupcakes/2048.jpg',
+  4:    '/2048cupcakes/4.webp',
+  8:    '/2048cupcakes/8.webp',
+  16:   '/2048cupcakes/16.webp',
+  32:   '/2048cupcakes/32.webp',
+  64:   '/2048cupcakes/64.webp',
+  128:  '/2048cupcakes/128.webp',
+  256:  '/2048cupcakes/256.webp',
+  512:  '/2048cupcakes/512.webp',
+  1024: '/2048cupcakes/1024.webp',
+  2048: '/2048cupcakes/2048.webp',
 };
 
 /* ── Constants ──────────────────────────────────────────────── */
