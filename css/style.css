@@ -153,7 +153,7 @@ button { cursor: pointer; border: none; outline: none; font-family: var(--font-b
 }
 
 .hero-inner {
-  max-width: 1200px; margin: 0 auto; padding: 60px 24px;
+  max-width: 1200px; margin: 0 auto; padding: 30px 24px;
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 60px; align-items: center; position: relative; z-index: 1;
 }
