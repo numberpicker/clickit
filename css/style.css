@@ -136,8 +136,7 @@ button { cursor: pointer; border: none; outline: none; font-family: var(--font-b
   position: relative; overflow: hidden;
 }
 .hero-image {
-  width: 100%;
-  max-width: 600px;  /* or whatever max size you want */
+  max-width: 500px;
   height: auto;
   display: block;
   margin: 0 auto;
