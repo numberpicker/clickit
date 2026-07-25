@@ -18,14 +18,9 @@
           <li><a href="/2048-cupcakes" class="nav-link">CupCakes</a></li>
           <li><a href="/2048-cookies" class="nav-link">2048</a></li>
           <li><a href="/#faq" class="nav-link">FAQ</a></li>
+          <li><a href="/guides" class="nav-link">Guides</a></li>
         </ul>
-      </nav>
-      <div class="header-actions">
-        <button class="btn-play-header" onclick="document.getElementById('game').scrollIntoView({behavior:'smooth'})">🎮 Play Free</button>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+      </nav>     
     </div>
   </header>`;
 
