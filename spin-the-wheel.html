@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SF69M360L7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SF69M360L7');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Spin The Wheel Of Cookies 🍪 | Free Cookie Decision Maker & Spinner</title>
+  <meta name="description" content="Spin the wheel of cookies! A fun decision maker & food picker. Click to spin and let the cookie wheel decide your fate. Play free, no download.">
+  <meta name="keywords" content="spin the wheel, wheel spinner, decision maker, food picker, cookies wheel, cookie spinner, random cookie, cookie game, click cookies">
+  <link rel="canonical" href="https://www.clickcookies.com/spin-the-wheel/">
+  <meta property="og:title" content="Spin The Wheel Of Cookies 🍪 | Free Cookie Decision Maker">
+  <meta property="og:description" content="Spin the delicious cookie wheel and let it decide your next treat! 21 cookie types, vibrant spinner.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.clickcookies.com/spin-the-wheel/">
+  <meta property="og:image" content="https://www.clickcookies.com/images/og-wheel.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Spin The Wheel Of Cookies 🍪">
+  <meta name="twitter:description" content="Spin the cookie wheel – a tasty decision maker for food lovers!">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    /* wheel-specific styles, mobile-first, candy theme */
+    .wheel-wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1.5rem 0.5rem;
+    }
+    .wheel-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1/1;
+      max-width: 600px;
+      margin: 1.2rem auto;
+      touch-action: none;
+    }
+    #wheelCanvas {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+      border-radius: 50%;
+      box-shadow: 0 12px 40px rgba(139,69,19,0.25), 0 0 0 6px #fff5e8, 0 0 0 10px #fcd34d;
+      background: #fff8f0;
+      transition: box-shadow 0.2s;
+      cursor: pointer;
+    }
+    #wheelCanvas:active { box-shadow: 0 6px 24px rgba(139,69,19,0.35), 0 0 0 6px #fff5e8, 0 0 0 10px #f59e0b; }
+    .wheel-center {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 16%;
+      height: 16%;
+      background: radial-gradient(circle, #fff5e8, #fde68a);
+      border-radius: 50%;
+      border: 4px solid #fcd34d;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #8b4513;
+      pointer-events: none;
+      z-index: 10;
+      font-family: 'Fredoka One', cursive;
+      letter-spacing: 1px;
+    }
+    .wheel-pointer {
+      position: absolute;
+      top: -16px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.6rem;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+      z-index: 20;
+      pointer-events: none;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      line-height: 1;
+    }
+    .spin-btn-wrap {
+      text-align: center;
+      margin: 1.2rem 0 0.8rem;
+    }
+    .btn-spin {
+      background: linear-gradient(135deg, #ff6b9d, #a855f7);
+      border: none;
+      padding: 14px 44px;
+      border-radius: 40px;
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.6rem;
+      color: white;
+      box-shadow: 0 6px 24px rgba(168,85,247,0.4);
+      transition: transform 0.15s, box-shadow 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      touch-action: manipulation;
+      cursor: pointer;
+    }
+    .btn-spin:active { transform: scale(0.94); box-shadow: 0 3px 12px rgba(168,85,247,0.5); }
+    .btn-spin:disabled { opacity: 0.6; transform: scale(0.96); pointer-events: none; }
+    .result-box {
+      background: white;
+      border-radius: 40px;
+      padding: 14px 24px;
+      margin: 1rem auto;
+      max-width: 420px;
+      text-align: center;
+      border: 3px solid #fcd34d;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #2d1b00;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 72px;
+      background: #fffcf7;
+    }
+    .result-box img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: contain;
+      background: #f8f0e8;
+      padding: 4px;
+      border: 2px solid #ffe0c0;
+    }
+    .result-box span { font-size: 1.3rem; }
+    .wheel-features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+      gap: 18px;
+      margin: 2.8rem 0 1.2rem;
+    }
+    .wheel-feature-card {
+      background: white;
+      padding: 20px 12px;
+      border-radius: 28px;
+      text-align: center;
+      border: 2px solid #f0e0d0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .wheel-feature-card .emoji-big { font-size: 2.8rem; display: block; margin-bottom: 8px; }
+    .wheel-feature-card h4 { font-family: 'Fredoka One', cursive; font-size: 1.1rem; color: #5c3d1e; margin: 0; }
+    .wheel-feature-card p { font-size: 0.85rem; color: #7a5f3e; font-weight: 600; margin: 6px 0 0; }
+    .cookie-grid-mini {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(60px,1fr));
+      gap: 6px;
+      background: #fff8f0;
+      padding: 16px 12px;
+      border-radius: 40px;
+      border: 2px solid #f5e0d0;
+      margin: 1.6rem 0;
+    }
+    .cookie-grid-mini .mini-cookie {
+      background: white;
+      border-radius: 30px;
+      padding: 6px 4px;
+      text-align: center;
+      border: 1px solid #f0e0d0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .cookie-grid-mini .mini-cookie img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+    .cookie-grid-mini .mini-cookie .cname {
+      font-size: 0.5rem;
+      font-weight: 700;
+      color: #5c3d1e;
+      display: block;
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .section-spacer { padding: 2.5rem 0 1rem; }
+    @media (max-width: 480px) {
+      .wheel-center { font-size: 1.2rem; border-width: 3px; }
+      .wheel-pointer { font-size: 2rem; top: -10px; }
+      .btn-spin { font-size: 1.3rem; padding: 12px 28px; }
+      .result-box { font-size: 1rem; padding: 12px 16px; min-height: 64px; }
+      .result-box img { width: 36px; height: 36px; }
+      .cookie-grid-mini { grid-template-columns: repeat(auto-fill, minmax(50px,1fr)); }
+      .cookie-grid-mini .mini-cookie img { width: 30px; height: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <!-- HERO / WHEEL SECTION -->
+  <section style="padding-top: calc(var(--header-h, 68px) + 1.2rem); background: linear-gradient(160deg, #FFF0DC, #FFE4FA, #E0F2FF);">
+    <div class="wheel-wrapper">
+      <div class="text-center reveal" style="margin-bottom: 0.5rem;">
+        <div class="section-tag">🎡 Spin & Decide</div>
+        <h1 class="section-title" style="font-size: clamp(2.2rem,5vw,3.4rem);">Spin The Wheel Of Cookies</h1>
+        <p class="section-sub" style="max-width: 540px; margin-left: auto; margin-right: auto;">Let the cookie wheel be your decision maker! 🍪 Click or tap to spin, and discover your cookie destiny.</p>
+      </div>
+
+      <!-- WHEEL -->
+      <div class="wheel-container" id="wheelContainer">
+        <canvas id="wheelCanvas" width="600" height="600"></canvas>
+        <div class="wheel-pointer">▼</div>
+        <div class="wheel-center">SPIN</div>
+      </div>
+
+      <div class="spin-btn-wrap">
+        <button class="btn-spin" id="spinBtn">🎲 Spin Now</button>
+      </div>
+
+      <div class="result-box" id="resultBox">
+        <span>🍪 Click spin to start!</span>
+      </div>
+
+      <!-- mini cookie grid (showing all 21 types) -->
+      <div class="cookie-grid-mini" id="miniCookieGrid"></div>
+
+      <!-- features / why spin -->
+      <div class="wheel-features-grid">
+        <div class="wheel-feature-card"><span class="emoji-big">🎯</span><h4>Decision Maker</h4><p>Can't choose? Let the wheel pick for you.</p></div>
+        <div class="wheel-feature-card"><span class="emoji-big">🍪</span><h4>21 Cookie Types</h4><p>Every spin lands on a unique delicious cookie.</p></div>
+        <div class="wheel-feature-card"><span class="emoji-big">📱</span><h4>Mobile Friendly</h4><p>Tap to spin – works great on phones & tablets.</p></div>
+        <div class="wheel-feature-card"><span class="emoji-big">✨</span><h4>Food Picker</h4><p>Ideal for snack decisions, party games & fun.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO / ABOUT SECTION -->
+  <section id="about-wheel" style="background: white; padding: 3rem 1.2rem;">
+    <div class="section-inner text-center reveal">
+      <div class="section-tag">🍪 Cookie Spinner</div>
+      <h2 class="section-title">Why Spin The Cookie Wheel?</h2>
+      <p class="section-sub" style="max-width: 680px; margin-left: auto; margin-right: auto;">The ultimate food picker and decision maker for cookie lovers. Spin the wheel to get a random cookie from our collection of 21 types – from Classic to Mythic. Use it to decide your next snack, settle debates, or just for fun!</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin: 2rem 0 0;">
+        <span style="background: #f5e8e0; padding: 8px 20px; border-radius: 30px; font-weight: 700;">🎡 Wheel Spinner</span>
+        <span style="background: #f5e8e0; padding: 8px 20px; border-radius: 30px; font-weight: 700;">🍪 Cookie Picker</span>
+        <span style="background: #f5e8e0; padding: 8px 20px; border-radius: 30px; font-weight: 700;">👑 Random Treat</span>
+        <span style="background: #f5e8e0; padding: 8px 20px; border-radius: 30px; font-weight: 700;">🎲 Fun Decision Maker</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO SPIN (steps) -->
+  <section style="background: #fcf7f0; padding: 2.8rem 1.2rem;">
+    <div class="section-inner text-center reveal">
+      <div class="section-tag">📖 How to Spin</div>
+      <h2 class="section-title">Spin in 3 Easy Steps</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 24px; margin-top: 2rem;">
+        <div style="background: white; border-radius: 32px; padding: 24px 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);"><span style="font-size: 3rem; display: block;">1️⃣</span><h4 style="font-family: 'Fredoka One', cursive;">Look at the Wheel</h4><p style="font-weight: 600; color: #5c3d1e;">See the colourful cookie slices.</p></div>
+        <div style="background: white; border-radius: 32px; padding: 24px 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);"><span style="font-size: 3rem; display: block;">2️⃣</span><h4 style="font-family: 'Fredoka One', cursive;">Tap or Click Spin</h4><p style="font-weight: 600; color: #5c3d1e;">Press the big SPIN button or tap the wheel.</p></div>
+        <div style="background: white; border-radius: 32px; padding: 24px 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);"><span style="font-size: 3rem; display: block;">3️⃣</span><h4 style="font-family: 'Fredoka One', cursive;">See Your Cookie</h4><p style="font-weight: 600; color: #5c3d1e;">The wheel stops on a delicious cookie type!</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SCHEMA inline (mini) -->
+  <section id="faq-wheel" style="background: white; padding: 2.8rem 1.2rem;">
+    <div class="section-inner text-center reveal">
+      <div class="section-tag">❓ FAQ</div>
+      <h2 class="section-title">Cookie Wheel Questions</h2>
+      <div style="max-width: 640px; margin: 1.6rem auto; text-align: left; display: flex; flex-direction: column; gap: 16px;">
+        <div style="background: #faf3ec; border-radius: 24px; padding: 16px 20px;"><strong>🍪 Is this wheel free?</strong><p style="margin: 6px 0 0; font-weight: 500;">Yes! 100% free, no sign-up, no download.</p></div>
+        <div style="background: #faf3ec; border-radius: 24px; padding: 16px 20px;"><strong>🎡 How many cookies are on the wheel?</strong><p style="margin: 6px 0 0; font-weight: 500;">21 unique cookie types, from Classic to Mythic.</p></div>
+        <div style="background: #faf3ec; border-radius: 24px; padding: 16px 20px;"><strong>📱 Can I spin on my phone?</strong><p style="margin: 6px 0 0; font-weight: 500;">Absolutely! Tap the spin button or the wheel itself.</p></div>
+        <div style="background: #faf3ec; border-radius: 24px; padding: 16px 20px;"><strong>✨ What can I use the wheel for?</strong><p style="margin: 6px 0 0; font-weight: 500;">Decision making, food picker, party games, or just for fun!</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER (similar to main) -->
+  <section id="cta-wheel" style="background: linear-gradient(135deg, #ff6b9d, #a855f7); padding: 3rem 1.2rem; text-align: center;">
+    <h2 style="font-family: 'Fredoka One', cursive; color: white; font-size: clamp(1.8rem,4vw,3rem);">🎉 Ready to Spin?</h2>
+    <p style="color: rgba(255,255,255,0.85); font-size: 1.1rem; font-weight: 700; margin: 0.5rem 0 1.6rem;">Let the cookie wheel decide your next treat!</p>
+    <button class="btn-cta-big" style="background: white; color: #a855f7; border: none;" onclick="document.getElementById('wheelContainer').scrollIntoView({behavior:'smooth'})">🍪 Spin Now</button>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- scripts -->
+  <script src="/js/header.js"></script>
+  <script src="/js/footer.js"></script>
+  <script>
+    (function() {
+      // ----- COOKIE DATA (exactly from game.js) -----
+      const COOKIE_TYPES = [
+        { id: 'classic',      name: 'Classic Cookie',        image: '/images/classic-cookie.png', points: 1,    rarity: 'common',    color: '#D2691E' },
+        { id: 'choco',        name: 'Chocolate Chip',        image: '/images/chocolate-chip.png', points: 2,    rarity: 'common',    color: '#5C3317' },
+        { id: 'sugar',        name: 'Sugar Cookie',          image: '/images/sugar-cookie.png', points: 3,    rarity: 'common',    color: '#FFD700' },
+        { id: 'peanut',       name: 'Peanut Butter',         image: '/images/peanut-butter.png', points: 4,    rarity: 'common',    color: '#C8A96E' },
+        { id: 'oatmeal',      name: 'Oatmeal Raisin',        image: '/images/oatmeal-raisin.png', points: 5,    rarity: 'common',    color: '#A0785A' },
+        { id: 'snickerdoodle',name: 'Snickerdoodle',         image: '/images/snickerdoodle.png', points: 6,    rarity: 'uncommon',  color: '#F4A460' },
+        { id: 'macaroon',     name: 'Coconut Macaroon',      image: '/images/coconut-macaron.png', points: 8,    rarity: 'uncommon',  color: '#FFF8DC' },
+        { id: 'ginger',       name: 'Gingerbread',           image: '/images/gingerbread.png', points: 10,   rarity: 'uncommon',  color: '#8B4513' },
+        { id: 'macaron',      name: 'French Macaron',        image: '/images/french-macaron.png', points: 12,   rarity: 'uncommon',  color: '#FFB6C1' },
+        { id: 'lemon',        name: 'Lemon Drizzle',         image: '/images/lemon-drizzle.png', points: 15,   rarity: 'uncommon',  color: '#FFF44F' },
+        { id: 'rainbow',      name: 'Rainbow Cookie',        image: '/images/rainbow-cookie.png', points: 20,   rarity: 'rare',      color: '#FF6B9D' },
+        { id: 'sprinkle',     name: 'Sprinkle Explosion',    image: '/images/sprinkle-explosion.png', points: 25,   rarity: 'rare',      color: '#FF69B4' },
+        { id: 'choco_lava',   name: 'Chocolate Lava',        image: '/images/chocolate-lava.png', points: 30,   rarity: 'rare',      color: '#3D0C02' },
+        { id: 'galaxy',       name: 'Galaxy Cookie',         image: '/images/galaxy-cookie.png', points: 40,   rarity: 'epic',      color: '#1a0533' },
+        { id: 'unicorn',      name: 'Unicorn Cookie',        image: '/images/unicorn-cookie.png', points: 50,   rarity: 'epic',      color: '#E0B0FF' },
+        { id: 'dragon',       name: 'Dragon Cookie',         image: '/images/dragon-cookie.png', points: 75,   rarity: 'epic',      color: '#FF4500' },
+        { id: 'diamond',      name: 'Diamond Cookie',        image: '/images/diamond-cookie.png', points: 100,  rarity: 'legendary', color: '#B9F2FF' },
+        { id: 'golden',       name: 'Golden Cookie',         image: '/images/golden-cookie.png', points: 150,  rarity: 'legendary', color: '#FFD700' },
+        { id: 'cosmic',       name: 'Cosmic Cookie',         image: '/images/cosmic-cookie.png', points: 200,  rarity: 'legendary', color: '#9B59B6' },
+        { id: 'void',         name: 'Void Cookie',           image: '/images/void-cookie.png', points: 500,  rarity: 'mythic',    color: '#0a0a0a' },
+        { id: 'infinity',     name: 'Infinity Cookie',       image: '/images/infinity-cookie.png', points: 1000, rarity: 'mythic',    color: '#FF00FF' }
+      ];
+
+      // ----- wheel setup -----
+      const canvas = document.getElementById('wheelCanvas');
+      const ctx = canvas.getContext('2d');
+      const spinBtn = document.getElementById('spinBtn');
+      const resultBox = document.getElementById('resultBox');
+      const container = document.getElementById('wheelContainer');
+
+      const segments = COOKIE_TYPES.length; // 21
+      let currentAngle = 0;
+      let isSpinning = false;
+      let spinVelocity = 0;
+      const friction = 0.985;
+      const minSpin = 2.5; // radians per frame
+
+      // draw wheel
+      function drawWheel(rotation) {
+        const w = canvas.width, h = canvas.height;
+        const radius = Math.min(w, h) * 0.42;
+        const cx = w/2, cy = h/2;
+        ctx.clearRect(0,0,w,h);
+        const slice = (2 * Math.PI) / segments;
+        for (let i = 0; i < segments; i++) {
+          const start = i * slice + rotation;
+          const end = start + slice;
+          const cookie = COOKIE_TYPES[i];
+          ctx.beginPath();
+          ctx.moveTo(cx, cy);
+          ctx.arc(cx, cy, radius, start, end);
+          ctx.closePath();
+          ctx.fillStyle = cookie.color || '#d4a373';
+          ctx.fill();
+          ctx.strokeStyle = '#fff5e8';
+          ctx.lineWidth = 2;
+          ctx.stroke();
+
+          // draw cookie image or icon
+          const midAngle = start + slice/2;
+          const imgRadius = radius * 0.7;
+          const imgX = cx + Math.cos(midAngle) * imgRadius;
+          const imgY = cy + Math.sin(midAngle) * imgRadius;
+          const imgSize = radius * 0.2;
+          // load image from cookie
+          const img = new Image();
+          img.crossOrigin = "anonymous";
+          img.src = cookie.image;
+          // draw if loaded, else fallback
+          try {
+            ctx.save();
+            ctx.translate(imgX, imgY);
+            ctx.rotate(midAngle);
+            ctx.drawImage(img, -imgSize/2, -imgSize/2, imgSize, imgSize);
+            ctx.restore();
+          } catch(e) {
+            ctx.fillStyle = '#fff';
+            ctx.font = `${imgSize * 0.8}px sans-serif`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('🍪', imgX, imgY);
+          }
+        }
+        // center dot
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius * 0.08, 0, 2*Math.PI);
+        ctx.fillStyle = '#fcd34d';
+        ctx.shadowColor = 'rgba(0,0,0,0.1)';
+        ctx.shadowBlur = 12;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+        ctx.strokeStyle = '#fff5e8';
+        ctx.lineWidth = 3;
+        ctx.stroke();
+      }
+
+      // get winning segment
+      function getWinningCookie(rotation) {
+        const slice = (2 * Math.PI) / segments;
+        // pointer at top ( - PI/2 )
+        let angle = (2 * Math.PI - (rotation % (2*Math.PI)) + Math.PI/2) % (2*Math.PI);
+        let idx = Math.floor(angle / slice) % segments;
+        return COOKIE_TYPES[idx] || COOKIE_TYPES[0];
+      }
+
+      // spin animation
+      function spinAnimation() {
+        if (!isSpinning) return;
+        if (spinVelocity < 0.01) {
+          isSpinning = false;
+          spinBtn.disabled = false;
+          const winner = getWinningCookie(currentAngle);
+          // show result
+          resultBox.innerHTML = `<img src="${winner.image}" alt="${winner.name}" loading="lazy"> <span>${winner.name}</span>`;
+          return;
+        }
+        spinVelocity *= friction;
+        currentAngle = (currentAngle + spinVelocity) % (2*Math.PI);
+        drawWheel(currentAngle);
+        requestAnimationFrame(spinAnimation);
+      }
+
+      function startSpin() {
+        if (isSpinning) return;
+        isSpinning = true;
+        spinBtn.disabled = true;
+        spinVelocity = 12 + Math.random() * 8;
+        resultBox.innerHTML = `<span>🌀 Spinning...</span>`;
+        spinAnimation();
+        // haptic / sound? skip
+      }
+
+      // event listeners
+      spinBtn.addEventListener('click', startSpin);
+      canvas.addEventListener('click', startSpin);
+      container.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        startSpin();
+      }, { passive: false });
+
+      // init draw
+      drawWheel(0);
+      // preload images & mini grid
+      function renderMiniGrid() {
+        const grid = document.getElementById('miniCookieGrid');
+        grid.innerHTML = COOKIE_TYPES.map(c => `
+          <div class="mini-cookie">
+            <img src="${c.image}" alt="${c.name}" loading="lazy">
+            <span class="cname">${c.name}</span>
+          </div>
+        `).join('');
+      }
+      renderMiniGrid();
+
+      // update result on first load
+      const first = COOKIE_TYPES[0];
+      resultBox.innerHTML = `<img src="${first.image}" alt="${first.name}" loading="lazy"> <span>${first.name}</span>`;
+
+      // responsiveness: redraw on resize
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => drawWheel(currentAngle), 100);
+      });
+
+      // seo: schema for wheel (FAQ + Game)
+      const scriptSchema = document.createElement('script');
+      scriptSchema.type = 'application/ld+json';
+      scriptSchema.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Spin The Wheel Of Cookies",
+        "url": "https://www.clickcookies.com/spin-the-wheel/",
+        "description": "Interactive cookie wheel spinner – a fun decision maker and food picker with 21 cookie types.",
+        "applicationCategory": "Game",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      });
+      document.head.appendChild(scriptSchema);
+    })();
+  </script>
+</body>
+</html>
