@@ -17,7 +17,7 @@
           <li><a href="/#upgrades" class="nav-link">Upgrades</a></li>
           <li><a href="/2048-cupcakes" class="nav-link">CupCakes</a></li>
           <li><a href="/2048-cookies" class="nav-link">2048</a></li>
-          <li><a href="/#faq" class="nav-link">FAQ</a></li>
+          <li><a href="/spin-the-wheel" class="nav-link">Cookies Spin Wheel</a></li>
           <li><a href="/blog" class="nav-link">Blog</a></li>
         </ul>
       </nav>     
