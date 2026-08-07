@@ -186,6 +186,22 @@
       text-overflow: ellipsis;
     }
     .section-spacer { padding: 2.5rem 0 1rem; }
+    /* ensure hero content is visible */
+    .wheel-hero-title {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      color: #8b4513;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .wheel-hero-sub {
+      font-size: 1.1rem;
+      color: #5c3d1e;
+      font-weight: 600;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
     @media (max-width: 480px) {
       .wheel-center { font-size: 1.2rem; border-width: 3px; }
       .wheel-pointer { font-size: 2rem; top: -10px; }
@@ -205,8 +221,8 @@
     <div class="wheel-wrapper">
       <div class="text-center reveal" style="margin-bottom: 0.5rem;">
         <div class="section-tag">🎡 Spin & Decide</div>
-        <h1 class="section-title" style="font-size: clamp(2.2rem,5vw,3.4rem);">Spin The Wheel Of Cookies</h1>
-        <p class="section-sub" style="max-width: 540px; margin-left: auto; margin-right: auto;">Let the cookie wheel be your decision maker! 🍪 Click or tap to spin, and discover your cookie destiny.</p>
+        <h1 class="wheel-hero-title">Spin The Wheel Of Cookies</h1>
+        <p class="wheel-hero-sub">Let the cookie wheel be your decision maker! 🍪 Click or tap to spin, and discover your cookie destiny.</p>
       </div>
 
       <!-- WHEEL -->
@@ -330,19 +346,21 @@
       let isSpinning = false;
       let spinVelocity = 0;
       const friction = 0.985;
-      const minSpin = 2.5; // radians per frame
 
-      // draw wheel
+      // draw wheel with images
       function drawWheel(rotation) {
         const w = canvas.width, h = canvas.height;
         const radius = Math.min(w, h) * 0.42;
         const cx = w/2, cy = h/2;
         ctx.clearRect(0,0,w,h);
         const slice = (2 * Math.PI) / segments;
+        
         for (let i = 0; i < segments; i++) {
           const start = i * slice + rotation;
           const end = start + slice;
           const cookie = COOKIE_TYPES[i];
+          
+          // Draw segment
           ctx.beginPath();
           ctx.moveTo(cx, cy);
           ctx.arc(cx, cy, radius, start, end);
@@ -353,24 +371,26 @@
           ctx.lineWidth = 2;
           ctx.stroke();
 
-          // draw cookie image or icon
+          // Draw cookie image
           const midAngle = start + slice/2;
           const imgRadius = radius * 0.7;
           const imgX = cx + Math.cos(midAngle) * imgRadius;
           const imgY = cy + Math.sin(midAngle) * imgRadius;
           const imgSize = radius * 0.2;
-          // load image from cookie
+          
           const img = new Image();
           img.crossOrigin = "anonymous";
           img.src = cookie.image;
-          // draw if loaded, else fallback
+          
+          // Draw image (or fallback)
           try {
             ctx.save();
             ctx.translate(imgX, imgY);
-            ctx.rotate(midAngle);
+            // Don't rotate the image, keep it upright
             ctx.drawImage(img, -imgSize/2, -imgSize/2, imgSize, imgSize);
             ctx.restore();
           } catch(e) {
+            // fallback emoji
             ctx.fillStyle = '#fff';
             ctx.font = `${imgSize * 0.8}px sans-serif`;
             ctx.textAlign = 'center';
@@ -378,7 +398,8 @@
             ctx.fillText('🍪', imgX, imgY);
           }
         }
-        // center dot
+        
+        // Center dot
         ctx.beginPath();
         ctx.arc(cx, cy, radius * 0.08, 0, 2*Math.PI);
         ctx.fillStyle = '#fcd34d';
@@ -391,12 +412,17 @@
         ctx.stroke();
       }
 
-      // get winning segment
+      // FIXED: get winning segment - pointer is at top (12 o'clock = -PI/2)
       function getWinningCookie(rotation) {
         const slice = (2 * Math.PI) / segments;
-        // pointer at top ( - PI/2 )
-        let angle = (2 * Math.PI - (rotation % (2*Math.PI)) + Math.PI/2) % (2*Math.PI);
-        let idx = Math.floor(angle / slice) % segments;
+        // The pointer is at top: angle = -PI/2 (or 3*PI/2)
+        // We need to find which segment the top angle falls into
+        // Normalize the rotation
+        const normalizedRotation = ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+        // The angle of the top pointer relative to the wheel's rotation
+        // Top is at -PI/2, so we add PI/2 to get the segment angle
+        let pointerAngle = (2 * Math.PI - normalizedRotation + Math.PI/2) % (2 * Math.PI);
+        let idx = Math.floor(pointerAngle / slice) % segments;
         return COOKIE_TYPES[idx] || COOKIE_TYPES[0];
       }
 
@@ -424,7 +450,6 @@
         spinVelocity = 12 + Math.random() * 8;
         resultBox.innerHTML = `<span>🌀 Spinning...</span>`;
         spinAnimation();
-        // haptic / sound? skip
       }
 
       // event listeners
@@ -437,7 +462,8 @@
 
       // init draw
       drawWheel(0);
-      // preload images & mini grid
+      
+      // render mini grid
       function renderMiniGrid() {
         const grid = document.getElementById('miniCookieGrid');
         grid.innerHTML = COOKIE_TYPES.map(c => `
@@ -449,18 +475,18 @@
       }
       renderMiniGrid();
 
-      // update result on first load
+      // set initial result
       const first = COOKIE_TYPES[0];
       resultBox.innerHTML = `<img src="${first.image}" alt="${first.name}" loading="lazy"> <span>${first.name}</span>`;
 
-      // responsiveness: redraw on resize
+      // redraw on resize
       let resizeTimer;
       window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => drawWheel(currentAngle), 100);
       });
 
-      // seo: schema for wheel (FAQ + Game)
+      // Schema markup
       const scriptSchema = document.createElement('script');
       scriptSchema.type = 'application/ld+json';
       scriptSchema.textContent = JSON.stringify({
